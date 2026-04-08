@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Redirecting…</title>
+    <script>
+      // GitHub Pages SPA fallback.
+      // Redirect /portfolio/anything -> /portfolio/?/anything so the app can restore the route.
+      ;(function () {
+        var l = window.location
+        var segmentCount = 1 // repo name: /portfolio
+        var path = l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/'
+        var rest = l.pathname.replace(path, '')
+        var redirect = path + '?/' + rest + (l.search ? '&' + l.search.slice(1) : '') + l.hash
+        l.replace(redirect)
+      })()
+    </script>
+  </head>
+  <body></body>
+</html>
+
