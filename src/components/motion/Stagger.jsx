@@ -1,16 +1,8 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { durations, easeOutSoft } from '../../styles/motion.js'
+import { staggerContainer } from '../../styles/stagger.js'
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion.js'
-
-export function staggerContainer(stagger = 0.09, delayChildren = 0) {
-  return {
-    hidden: {},
-    show: {
-      transition: { staggerChildren: stagger, delayChildren },
-    },
-  }
-}
 
 const itemFull = {
   hidden: { opacity: 0, y: 12, filter: 'blur(8px)' },

@@ -2,39 +2,44 @@
 
 Modern personal portfolio built with **React + Vite**, **Tailwind CSS**, **Framer Motion**, and **React Router**.
 
-## Run locally
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Build
+## Production build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## Notes
+## Content updates
 
 - Add your resume PDF at `public/resume.pdf` (the Resume page links to it).
 - Update contact links in `src/pages/Contact.jsx`.
 - Edit project content in `src/data/projects.js`.
 
-# React + Vite
+## Deployment (GitHub Pages)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repo deploys automatically on every push to `main` via `.github/workflows/deploy.yml`.
 
-Currently, two official plugins are available:
+- **Project URL (default)**: `https://<username>.github.io/<repo>/`
+- **Vite base path**: In CI we set `VITE_BASE=/<repo>/` so assets and routes resolve correctly on GitHub Pages.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Custom domain (when you buy one)
 
-## React Compiler
+Two common options:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Option A (recommended)**: Deploy with **Vercel** (or Netlify) and attach your domain there.
+  - Pros: easiest HTTPS + routing + performance.
+- **Option B**: Keep **GitHub Pages** and connect the domain in the repo’s GitHub Pages settings.
+  - When using a custom domain at the root (e.g. `example.com`), set `VITE_BASE=/` for the build.
 
-## Expanding the ESLint configuration
+To switch the build base for GitHub Actions, update the `Build` step env var in `.github/workflows/deploy.yml`:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+VITE_BASE=/
+```

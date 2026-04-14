@@ -61,6 +61,8 @@ export function Navbar() {
   )
 
   useEffect(() => {
+    // Close the mobile menu on navigation changes (including back/forward).
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpen(false)
   }, [location.pathname])
 

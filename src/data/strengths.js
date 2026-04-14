@@ -50,7 +50,7 @@ const contents = {
       {
         projectTitle: 'D2L Redesign',
         projectSlug: 'd2l-redesign',
-        text: 'Learning products live or die on course structure and task paths. This work centered on clearer IA and calmer UI so students and instructors could find work without fighting the chrome.',
+        text: 'Learning products live or die on course structure and task paths. This work centered on clearer IA and calmer UI so students could find work without fighting the chrome — shipped as a student-first interactive prototype.',
       },
       {
         projectTitle: 'Pure Michigan IA / Content Audit',
@@ -147,7 +147,7 @@ const contents = {
       {
         projectTitle: 'D2L Redesign',
         projectSlug: 'd2l-redesign',
-        text: 'A product story: competing needs (student focus vs. instructor tools), and how IA and UI changes made the experience easier to learn — not just prettier.',
+        text: 'A product story: student workload and deadlines against noisy UI, and how IA plus UI craft made the experience easier to learn — not just prettier — including a computational-thinking thread for presentation.',
       },
       {
         projectTitle: 'Pure Michigan IA / Content Audit',

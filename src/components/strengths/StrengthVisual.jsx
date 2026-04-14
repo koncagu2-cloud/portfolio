@@ -432,7 +432,7 @@ function VisualLayers({ reduced }) {
               <MotionDemo accessible={isAccessible} reduced={reduced} />
             )}
             {L.id === 'check' && (
-              <CheckDemo accessible={isAccessible} />
+              <CheckDemo />
             )}
           </motion.section>
         ))}
@@ -1112,7 +1112,7 @@ function MotionDemo({ accessible, reduced }) {
   )
 }
 
-function CheckDemo({ accessible }) {
+function CheckDemo() {
   return (
     <div className="mt-4 grid gap-3 sm:grid-cols-2" aria-hidden="true">
       <div className="rounded-xl border border-white/14 bg-black/40 px-4 py-3">

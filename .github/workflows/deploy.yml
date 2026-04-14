@@ -36,6 +36,10 @@ jobs:
         run: npm install --no-audit --no-fund
 
       - name: Build
+        env:
+          # Vite needs the correct base path for GitHub Pages project sites.
+          # If you later switch to a custom domain, set VITE_BASE to "/" in the workflow or repo variables.
+          VITE_BASE: /${{ github.event.repository.name }}/
         run: npm run build
 
       - name: Configure Pages
