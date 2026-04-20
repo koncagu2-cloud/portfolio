@@ -3,6 +3,7 @@ import { Page } from '../components/motion/Page.jsx'
 import { Reveal } from '../components/motion/Reveal.jsx'
 import { motion } from 'framer-motion'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion.js'
+import { siteContact } from '../data/siteContact.js'
 
 export function Contact() {
   const [status, setStatus] = useState('idle')
@@ -37,7 +38,13 @@ export function Contact() {
         <Reveal className="rounded-2xl border border-white/10 bg-black/15 p-7 backdrop-blur-xl">
           <form onSubmit={onSubmit} className="grid gap-4">
             <Field label="Name" name="name" placeholder="Your name" required />
-            <Field label="Email" name="email" type="email" placeholder="you@example.com" required />
+            <Field
+              label="Email"
+              name="email"
+              type="email"
+              placeholder={siteContact.email}
+              required
+            />
             <Field label="Message" name="message" as="textarea" placeholder="Context, timeline, or what a good outcome looks like for you." rows={6} required />
 
             <button
@@ -67,9 +74,19 @@ export function Contact() {
         <Reveal delay={0.08} className="rounded-2xl border border-white/10 bg-black/15 p-7 backdrop-blur-xl">
           <div className="font-[Unbounded] text-xs tracking-[0.22em] text-white/55">Links</div>
           <div className="mt-5 grid gap-3">
-            <ContactLink label="Email" value="suleyman@example.com" href="mailto:suleyman@example.com" />
-            <ContactLink label="LinkedIn" value="linkedin.com/in/your-handle" href="https://linkedin.com" />
-            <ContactLink label="GitHub" value="github.com/your-handle" href="https://github.com" />
+            <ContactLink label="Email" value={siteContact.email} href={`mailto:${siteContact.email}`} />
+            <ContactLink
+              label="GitHub"
+              value={siteContact.github.display}
+              href={siteContact.github.href}
+            />
+            {siteContact.linkedinUrl ? (
+              <ContactLink
+                label="LinkedIn"
+                value={siteContact.linkedinUrl.replace(/^https?:\/\/(www\.)?/, '')}
+                href={siteContact.linkedinUrl}
+              />
+            ) : null}
           </div>
 
           <div className="mt-8 h-px w-full bg-white/10" />

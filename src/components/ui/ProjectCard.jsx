@@ -34,9 +34,17 @@ export function ProjectCard({ project }) {
             transition={{ duration: durations.base, ease: easeOutSoft }}
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.45))]" />
-          <div className="absolute left-5 top-5 font-[Unbounded] text-[11px] tracking-[0.22em] text-white/52">
-            CASE STUDY
+          <div className="absolute left-5 top-5 flex flex-wrap items-center gap-2 font-[Unbounded] text-[11px] tracking-[0.22em] text-white/52">
+            <span>CASE STUDY</span>
+            {project.year ? (
+              <span className="text-white/38">· {project.year}</span>
+            ) : null}
           </div>
+          {project.status === 'draft' ? (
+            <div className="absolute right-5 top-5 rounded-full border border-amber-400/20 bg-amber-500/15 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.14em] text-amber-100/90">
+              Draft
+            </div>
+          ) : null}
           <motion.div
             aria-hidden="true"
             className="absolute inset-0 opacity-0"

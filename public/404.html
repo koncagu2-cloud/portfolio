@@ -6,11 +6,11 @@
     <meta name="robots" content="noindex" />
     <title>Redirecting…</title>
     <script>
-      // GitHub Pages SPA fallback.
-      // Redirect /portfolio/anything -> /portfolio/?/anything so the app can restore the route.
+      // GitHub Pages SPA fallback: send missing routes through ?/ so React Router can read them.
+      // segmentCount 0 = site at domain root (custom domain or user site). Use 1 for project pages like /portfolio/.
       ;(function () {
         var l = window.location
-        var segmentCount = 1 // repo name: /portfolio
+        var segmentCount = 0
         var path = l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/'
         var rest = l.pathname.replace(path, '')
         var redirect = path + '?/' + rest + (l.search ? '&' + l.search.slice(1) : '') + l.hash

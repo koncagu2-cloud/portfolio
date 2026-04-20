@@ -1,6 +1,9 @@
+import { useMemo } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Page } from '../components/motion/Page.jsx'
 import { Reveal } from '../components/motion/Reveal.jsx'
+import { CaseStudyResearch } from '../components/case-study/CaseStudyResearch.jsx'
+import { CaseStudyTOC, CaseStudyTOCMobile } from '../components/case-study/CaseStudyTOC.jsx'
 import { getProject } from '../data/projects.js'
 
 const DEFAULT_PROCESS = [
@@ -14,6 +17,16 @@ export function ProjectDetail() {
   const { slug } = useParams()
   const project = getProject(slug)
   const cs = project?.caseStudy
+
+  const tocSections = useMemo(() => {
+    if (!project) return []
+    const items = []
+    if (cs?.researchBlock) items.push({ id: 'case-research', label: 'Research' })
+    items.push({ id: 'case-overview', label: 'Overview' })
+    items.push({ id: 'case-process', label: 'Process' })
+    items.push({ id: 'case-deliverables', label: 'Role & solution' })
+    return items
+  }, [project, cs])
 
   if (!project) {
     return (
@@ -62,6 +75,16 @@ export function ProjectDetail() {
             ← Projects
           </Link>
         </Reveal>
+        {project.status === 'draft' ? (
+          <Reveal delay={0.04}>
+            <p
+              className="mt-5 rounded-xl border border-amber-400/20 bg-amber-500/10 px-4 py-3 text-sm leading-relaxed text-amber-50/95"
+              role="status"
+            >
+              Draft case study — narrative, visuals, and metrics are still being filled in.
+            </p>
+          </Reveal>
+        ) : null}
         <Reveal delay={0.06}>
           <h1 className="mt-5 font-[Unbounded] text-3xl tracking-[-0.03em] text-white/92 sm:text-5xl">
             {project.title}
@@ -74,103 +97,128 @@ export function ProjectDetail() {
         </Reveal>
       </header>
 
-      <section className="grid gap-6 lg:grid-cols-[1.2fr_.8fr]">
-        <Reveal className="overflow-hidden rounded-2xl border border-white/10 bg-black/15 backdrop-blur-xl">
-          <div className="relative h-56 border-b border-white/10 bg-gradient-to-br from-white/6 to-transparent">
-            {heroImage ? (
-              <img
-                src={heroImage}
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover object-top"
-              />
-            ) : null}
-            <div className="absolute inset-0 bg-[radial-gradient(700px_260px_at_30%_30%,rgba(124,58,237,.22),transparent_60%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(620px_240px_at_80%_20%,rgba(56,189,248,.14),transparent_60%)]" />
-            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/45 to-transparent" />
-            <div className="absolute left-6 top-6 max-w-[min(100%,20rem)] font-[Unbounded] text-[11px] leading-snug tracking-[0.18em] text-white/55">
-              {heroLabel}
-            </div>
-          </div>
-          <div className="p-7">
-            <SectionTitle>Overview</SectionTitle>
-            <p className="mt-3 text-sm leading-relaxed text-white/62">{overview}</p>
+      <div className="lg:flex lg:items-start lg:gap-10 xl:gap-12">
+        <aside className="mb-8 hidden shrink-0 lg:sticky lg:top-28 lg:mb-0 lg:block lg:w-56 xl:w-60">
+          <CaseStudyTOC sections={tocSections} />
+        </aside>
 
-            <div className="mt-7 grid gap-6 sm:grid-cols-2">
-              <div>
-                <SectionTitle>Problem</SectionTitle>
-                <p className="mt-3 text-sm leading-relaxed text-white/62">{problem}</p>
+        <div className="min-w-0 flex-1">
+          <div className="mb-8 lg:hidden">
+            <CaseStudyTOCMobile sections={tocSections} />
+          </div>
+
+          {cs?.researchBlock ? <CaseStudyResearch block={cs.researchBlock} /> : null}
+
+          <section className="grid gap-6 lg:grid-cols-[1.2fr_.8fr]">
+            <Reveal className="overflow-hidden rounded-2xl border border-white/10 bg-black/15 backdrop-blur-xl">
+              <div
+                id="case-overview"
+                className="scroll-mt-28">
+                <div className="relative h-56 border-b border-white/10 bg-gradient-to-br from-white/6 to-transparent">
+                  {heroImage ? (
+                    <img
+                      src={heroImage}
+                      alt=""
+                      className="absolute inset-0 h-full w-full object-cover object-top"
+                    />
+                  ) : null}
+                  <div className="absolute inset-0 bg-[radial-gradient(700px_260px_at_30%_30%,rgba(124,58,237,.22),transparent_60%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(620px_240px_at_80%_20%,rgba(56,189,248,.14),transparent_60%)]" />
+                  <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/45 to-transparent" />
+                  <div className="absolute left-6 top-6 max-w-[min(100%,20rem)] font-[Unbounded] text-[11px] leading-snug tracking-[0.18em] text-white/55">
+                    {heroLabel}
+                  </div>
+                </div>
+                <div className="p-7">
+                  <SectionTitle>Overview</SectionTitle>
+                  <p className="mt-3 text-sm leading-relaxed text-white/62">{overview}</p>
+
+                  <div className="mt-7 grid gap-6 sm:grid-cols-2">
+                    <div>
+                      <SectionTitle>Problem</SectionTitle>
+                      <p className="mt-3 text-sm leading-relaxed text-white/62">{problem}</p>
+                    </div>
+                    <div>
+                      <SectionTitle>Outcome</SectionTitle>
+                      <p className="mt-3 text-sm leading-relaxed text-white/62">{outcome}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div>
-                <SectionTitle>Outcome</SectionTitle>
-                <p className="mt-3 text-sm leading-relaxed text-white/62">{outcome}</p>
+
+              <div id="case-process" className="scroll-mt-28 border-t border-white/10 px-7 pb-7">
+                <div className="pt-7">
+                  <SectionTitle>Process</SectionTitle>
+                  <ol className="mt-3 grid gap-2 text-sm text-white/70">
+                    {processSteps.map((step) => (
+                      <li
+                        key={step.phase}
+                        className="rounded-xl border border-white/10 bg-white/5 px-4 py-3"
+                      >
+                        <span className="font-[Unbounded] text-[11px] tracking-[0.14em] text-white/45">
+                          {step.phase}
+                        </span>
+                        <span className="mt-1 block text-white/72">{step.text}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="mt-7">
-              <SectionTitle>Process</SectionTitle>
-              <ol className="mt-3 grid gap-2 text-sm text-white/70">
-                {processSteps.map((step) => (
-                  <li
-                    key={step.phase}
-                    className="rounded-xl border border-white/10 bg-white/5 px-4 py-3"
-                  >
-                    <span className="font-[Unbounded] text-[11px] tracking-[0.14em] text-white/45">
-                      {step.phase}
-                    </span>
-                    <span className="mt-1 block text-white/72">{step.text}</span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </Reveal>
+            <div id="case-deliverables" className="scroll-mt-28">
+            <Reveal
+              delay={0.08}
+              className="rounded-2xl border border-white/10 bg-black/15 p-7 backdrop-blur-xl"
+            >
+              <SectionTitle>Role</SectionTitle>
+              <p className="mt-3 text-sm text-white/65">{project.role}</p>
 
-        <Reveal delay={0.08} className="rounded-2xl border border-white/10 bg-black/15 p-7 backdrop-blur-xl">
-          <SectionTitle>Role</SectionTitle>
-          <p className="mt-3 text-sm text-white/65">{project.role}</p>
-
-          <div className="mt-7">
-            <SectionTitle>Tools used</SectionTitle>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {project.tools.map((t) => (
-                <span
-                  key={t}
-                  className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-white/72"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {cs?.links?.length ? (
-            <div className="mt-8">
-              <SectionTitle>Related</SectionTitle>
-              <ul className="mt-3 grid gap-2 text-sm">
-                {cs.links.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="text-white/70 underline decoration-white/20 underline-offset-4 transition hover:text-white/90 hover:decoration-white/40"
+              <div className="mt-7">
+                <SectionTitle>Tools used</SectionTitle>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {project.tools.map((t) => (
+                    <span
+                      key={t}
+                      className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-white/72"
                     >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {cs?.links?.length ? (
+                <div className="mt-8">
+                  <SectionTitle>Related</SectionTitle>
+                  <ul className="mt-3 grid gap-2 text-sm">
+                    {cs.links.map((link) => (
+                      <li key={link.href}>
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          className="text-white/70 underline decoration-white/20 underline-offset-4 transition hover:text-white/90 hover:decoration-white/40"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+
+              <div className="mt-8 h-px w-full bg-white/10" />
+
+              <div className="mt-8">
+                <SectionTitle>Solution</SectionTitle>
+                <p className="mt-3 text-sm leading-relaxed text-white/62">{solution}</p>
+              </div>
+            </Reveal>
             </div>
-          ) : null}
-
-          <div className="mt-8 h-px w-full bg-white/10" />
-
-          <div className="mt-8">
-            <SectionTitle>Solution</SectionTitle>
-            <p className="mt-3 text-sm leading-relaxed text-white/62">{solution}</p>
-          </div>
-        </Reveal>
-      </section>
+          </section>
+        </div>
+      </div>
     </Page>
   )
 }

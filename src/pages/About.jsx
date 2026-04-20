@@ -8,6 +8,7 @@ import { durations, easeOutSoft } from '../styles/motion.js'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion.js'
 import { strengthSummaries } from '../data/strengths.js'
 import portraitImg from '../assets/about-portrait.png'
+import { PortraitHoverCrown } from '../components/about/PortraitHoverCrown.jsx'
 
 const skills = [
   'UX Design',
@@ -62,7 +63,7 @@ export function About() {
           </Stagger>
         </div>
 
-        {/* Atmospheric portrait background (integrated, not framed) */}
+        {/* Atmospheric portrait background (integrated, not framed) — hover crown is decorative */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-y-0 right-[-160px] top-[-20px] z-[0] hidden lg:block"
@@ -88,32 +89,39 @@ export function About() {
           {/* Layer 2b: subtle color tint overlay */}
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(59,130,246,.14)_0%,transparent_58%)] opacity-55" />
 
-          <motion.img
-            src={portraitImg}
-            alt=""
-            loading="lazy"
-            decoding="async"
-            role="presentation"
-            className="absolute right-0 top-[40px] w-[560px] max-w-none select-none rounded-[26px] object-cover opacity-92"
-            style={{
-              WebkitMaskImage:
-                'radial-gradient(74% 74% at 75% 36%, rgba(0,0,0,1) 54%, rgba(0,0,0,0.85) 66%, rgba(0,0,0,0) 92%), linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 28%, rgba(0,0,0,0.75) 56%, rgba(0,0,0,1) 74%, rgba(0,0,0,1) 100%)',
-              maskImage:
-                'radial-gradient(74% 74% at 75% 36%, rgba(0,0,0,1) 54%, rgba(0,0,0,0.85) 66%, rgba(0,0,0,0) 92%), linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 28%, rgba(0,0,0,0.75) 56%, rgba(0,0,0,1) 74%, rgba(0,0,0,1) 100%)',
-              filter: 'brightness(1.06) contrast(1.08) saturate(1.03)',
-            }}
-            initial={reduced ? undefined : { opacity: 0, x: 28, filter: 'blur(10px)' }}
-            animate={
-              reduced
-                ? { opacity: 0.78 }
-                : { opacity: 0.92, x: 0, filter: 'blur(0px)' }
-            }
-            transition={{
-              duration: durations.slow,
-              ease: easeOutSoft,
-              delay: 0.22,
-            }}
-          />
+          <div className="pointer-events-auto absolute right-0 top-[40px] w-[560px] max-w-none">
+            <PortraitHoverCrown
+              reduced={reduced}
+              crownPositionClass="inset-x-0 top-[1%] z-[3] sm:top-[2%] lg:top-[3%]"
+            >
+              <motion.img
+                src={portraitImg}
+                alt=""
+                loading="lazy"
+                decoding="async"
+                role="presentation"
+                className="relative z-[1] w-full max-w-none select-none rounded-[26px] object-cover opacity-92 transition-transform duration-500 ease-out group-hover/portrait:scale-[1.02]"
+                style={{
+                  WebkitMaskImage:
+                    'radial-gradient(74% 74% at 75% 36%, rgba(0,0,0,1) 54%, rgba(0,0,0,0.85) 66%, rgba(0,0,0,0) 92%), linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 28%, rgba(0,0,0,0.75) 56%, rgba(0,0,0,1) 74%, rgba(0,0,0,1) 100%)',
+                  maskImage:
+                    'radial-gradient(74% 74% at 75% 36%, rgba(0,0,0,1) 54%, rgba(0,0,0,0.85) 66%, rgba(0,0,0,0) 92%), linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 28%, rgba(0,0,0,0.75) 56%, rgba(0,0,0,1) 74%, rgba(0,0,0,1) 100%)',
+                  filter: 'brightness(1.06) contrast(1.08) saturate(1.03)',
+                }}
+                initial={reduced ? undefined : { opacity: 0, x: 28, filter: 'blur(10px)' }}
+                animate={
+                  reduced
+                    ? { opacity: 0.78 }
+                    : { opacity: 0.92, x: 0, filter: 'blur(0px)' }
+                }
+                transition={{
+                  duration: durations.slow,
+                  ease: easeOutSoft,
+                  delay: 0.22,
+                }}
+              />
+            </PortraitHoverCrown>
+          </div>
 
         </div>
 
@@ -134,32 +142,39 @@ export function About() {
             aria-hidden="true"
             className="absolute -inset-16 bg-[radial-gradient(220px_190px_at_72%_40%,rgba(255,255,255,.12),transparent_62%)] blur-2xl opacity-65"
           />
-          <motion.img
-            src={portraitImg}
-            alt=""
-            role="presentation"
-            loading="lazy"
-            decoding="async"
-            className="absolute right-0 bottom-0 w-[420px] max-w-none select-none rounded-[22px] object-cover opacity-78"
-            style={{
-              WebkitMaskImage:
-                'radial-gradient(74% 74% at 75% 36%, rgba(0,0,0,1) 54%, rgba(0,0,0,0.85) 66%, rgba(0,0,0,0) 92%), linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.75) 58%, rgba(0,0,0,1) 76%, rgba(0,0,0,1) 100%)',
-              maskImage:
-                'radial-gradient(74% 74% at 75% 36%, rgba(0,0,0,1) 54%, rgba(0,0,0,0.85) 66%, rgba(0,0,0,0) 92%), linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.75) 58%, rgba(0,0,0,1) 76%, rgba(0,0,0,1) 100%)',
-              filter: 'brightness(1.05) contrast(1.07) saturate(1.03)',
-            }}
-            initial={reduced ? undefined : { opacity: 0, x: 24, filter: 'blur(10px)' }}
-            animate={
-              reduced
-                ? { opacity: 0.68 }
-                : { opacity: 0.78, x: 0, filter: 'blur(0px)' }
-            }
-            transition={{
-              duration: durations.slow,
-              ease: easeOutSoft,
-              delay: 0.22,
-            }}
-          />
+          <div className="pointer-events-auto absolute right-0 bottom-0 w-[420px] max-w-none">
+            <PortraitHoverCrown
+              reduced={reduced}
+              crownPositionClass="inset-x-0 top-[3%] z-[3] sm:top-[4%]"
+            >
+              <motion.img
+                src={portraitImg}
+                alt=""
+                role="presentation"
+                loading="lazy"
+                decoding="async"
+                className="relative z-[1] w-full max-w-none select-none rounded-[22px] object-cover opacity-78 transition-transform duration-500 ease-out group-hover/portrait:scale-[1.02]"
+                style={{
+                  WebkitMaskImage:
+                    'radial-gradient(74% 74% at 75% 36%, rgba(0,0,0,1) 54%, rgba(0,0,0,0.85) 66%, rgba(0,0,0,0) 92%), linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.75) 58%, rgba(0,0,0,1) 76%, rgba(0,0,0,1) 100%)',
+                  maskImage:
+                    'radial-gradient(74% 74% at 75% 36%, rgba(0,0,0,1) 54%, rgba(0,0,0,0.85) 66%, rgba(0,0,0,0) 92%), linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.75) 58%, rgba(0,0,0,1) 76%, rgba(0,0,0,1) 100%)',
+                  filter: 'brightness(1.05) contrast(1.07) saturate(1.03)',
+                }}
+                initial={reduced ? undefined : { opacity: 0, x: 24, filter: 'blur(10px)' }}
+                animate={
+                  reduced
+                    ? { opacity: 0.68 }
+                    : { opacity: 0.78, x: 0, filter: 'blur(0px)' }
+                }
+                transition={{
+                  duration: durations.slow,
+                  ease: easeOutSoft,
+                  delay: 0.22,
+                }}
+              />
+            </PortraitHoverCrown>
+          </div>
         </div>
       </header>
 

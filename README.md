@@ -18,7 +18,7 @@ npm run preview
 
 ## Content updates
 
-- Add your resume PDF at `public/resume.pdf` (the Resume page links to it).
+- Résumé layout lives in `src/components/resume/ResumeDesign.jsx` + `src/styles/resume-design.css`; the Resume page generates a PDF in the browser from that layout.
 - Update contact links in `src/pages/Contact.jsx`.
 - Edit project content in `src/data/projects.js`.
 
@@ -26,20 +26,14 @@ npm run preview
 
 This repo deploys automatically on every push to `main` via `.github/workflows/deploy.yml`.
 
-- **Project URL (default)**: `https://<username>.github.io/<repo>/`
-- **Vite base path**: In CI we set `VITE_BASE=/<repo>/` so assets and routes resolve correctly on GitHub Pages.
+- **Custom domain (default)**: CI builds with **`VITE_BASE=/`** so **`https://suleymankoncagul.com`** loads correctly.
+- **GitHub.io project URL only**: If you need `https://<user>.github.io/<repo>/`, set repository variable **`VITE_BASE`** to **`/<repo>/`** (e.g. `/portfolio/`).
 
-## Custom domain (when you buy one)
+## Custom domain (GitHub Pages + DNS)
 
-Two common options:
+1. Point DNS at GitHub (see **`docs/DNS-CLOUDFLARE.md`** for A/AAAA/CNAME records).
+2. **GitHub → repo → Settings → Pages → Custom domain** — add **`suleymankoncagul.com`**, wait for **DNS check** ✓, enable **Enforce HTTPS** when ready.
+3. **`public/CNAME`** in this repo keeps the domain on deploy; push to `main` so Actions publishes.
+4. Optional **`www`**: add **`www.suleymankoncagul.com`** in Pages and a CNAME in DNS, or redirect **www → apex** in your DNS host.
 
-- **Option A (recommended)**: Deploy with **Vercel** (or Netlify) and attach your domain there.
-  - Pros: easiest HTTPS + routing + performance.
-- **Option B**: Keep **GitHub Pages** and connect the domain in the repo’s GitHub Pages settings.
-  - When using a custom domain at the root (e.g. `example.com`), set `VITE_BASE=/` for the build.
-
-To switch the build base for GitHub Actions, update the `Build` step env var in `.github/workflows/deploy.yml`:
-
-```bash
-VITE_BASE=/
-```
+Alternatively, deploy on **Vercel/Netlify** and attach the domain there if you prefer.

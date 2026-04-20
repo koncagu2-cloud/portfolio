@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1920, height=1080, initial-scale=1" />
+    <title>Fixed OceanGate Journey Map</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        margin: 0;
+        overflow: hidden;
+        background: #111820;
+        color: #f7fbff;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        padding: 44px 54px 38px;
+        background:
+          radial-gradient(circle at 12% 8%, rgba(53, 189, 206, 0.16), transparent 34%),
+          radial-gradient(circle at 88% 16%, rgba(255, 179, 71, 0.12), transparent 34%),
+          linear-gradient(135deg, #111820 0%, #16242d 56%, #10161d 100%);
+      }
+
+      .header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 44px;
+        margin-bottom: 22px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 54px;
+        line-height: 0.98;
+        letter-spacing: -1.8px;
+        font-weight: 800;
+      }
+
+      .subtitle {
+        margin: 12px 0 0;
+        font-size: 24px;
+        line-height: 1.25;
+        color: rgba(237, 246, 255, 0.74);
+      }
+
+      .tag {
+        flex: 0 0 auto;
+        border: 2px solid rgba(125, 220, 232, 0.42);
+        border-radius: 999px;
+        padding: 12px 18px;
+        color: #bdf7ff;
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+      }
+
+      .journey {
+        display: grid;
+        grid-template-columns: 168px repeat(7, 1fr);
+        grid-template-rows: 78px repeat(6, 118px);
+        border: 5px solid #f3f7fb;
+        background: #f3f7fb;
+        gap: 5px;
+        box-shadow: 0 22px 70px rgba(0, 0, 0, 0.34);
+      }
+
+      .cell {
+        background: #15222b;
+        padding: 14px 16px;
+        overflow: hidden;
+      }
+
+      .stage-label,
+      .row-label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: #101922;
+        font-size: 16px;
+        font-weight: 900;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+      }
+
+      .stage {
+        position: relative;
+        text-align: center;
+        padding: 16px 12px 12px;
+        background: #13212b;
+      }
+
+      .stage::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto;
+        height: 7px;
+        background: var(--accent);
+      }
+
+      .stage strong {
+        display: block;
+        font-size: 17px;
+        line-height: 1.08;
+        letter-spacing: 0.2px;
+        text-transform: uppercase;
+      }
+
+      .stage span {
+        display: block;
+        margin-bottom: 8px;
+        color: rgba(255, 255, 255, 0.56);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 1.8px;
+      }
+
+      .row-label {
+        font-size: 15px;
+      }
+
+      .cell p {
+        margin: 0;
+        color: rgba(246, 250, 255, 0.94);
+        font-size: 17px;
+        line-height: 1.18;
+        font-weight: 750;
+      }
+
+      .cell.response p {
+        color: #d6f7ff;
+      }
+
+      .cell.opportunity p {
+        color: #defce7;
+      }
+
+      .cell.emotion p {
+        color: #ffe8b0;
+      }
+
+      .bottom {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 22px;
+        margin-top: 22px;
+      }
+
+      .box {
+        min-height: 116px;
+        border: 2px solid rgba(125, 220, 232, 0.36);
+        border-radius: 22px;
+        background: rgba(12, 25, 33, 0.82);
+        padding: 20px 24px;
+      }
+
+      .box h2 {
+        margin: 0 0 10px;
+        color: #b9fff1;
+        font-size: 18px;
+        letter-spacing: 2.8px;
+        text-transform: uppercase;
+      }
+
+      .box p {
+        margin: 0;
+        color: rgba(246, 250, 255, 0.88);
+        font-size: 23px;
+        line-height: 1.28;
+        font-weight: 760;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .chip {
+        border: 1px solid rgba(185, 255, 241, 0.35);
+        border-radius: 999px;
+        background: rgba(185, 255, 241, 0.08);
+        padding: 9px 13px;
+        color: #e6fff9;
+        font-size: 18px;
+        font-weight: 800;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div>
+        <h1>OceanGate Customer Trust Journey Map</h1>
+        <p class="subtitle">Mapping how trust formed, broke down, and revealed gaps in risk communication.</p>
+      </div>
+      <div class="tag">UX Crisis Journey</div>
+    </header>
+
+    <main class="journey" aria-label="OceanGate UX crisis journey map">
+      <div class="cell stage-label">Stage</div>
+      <div class="cell stage" style="--accent:#67e8f9"><span>01</span><strong>Discovers<br />OceanGate</strong></div>
+      <div class="cell stage" style="--accent:#38bdf8"><span>02</span><strong>Researches<br />Experience</strong></div>
+      <div class="cell stage" style="--accent:#5eead4"><span>03</span><strong>Builds<br />Trust</strong></div>
+      <div class="cell stage" style="--accent:#fbbf24"><span>04</span><strong>Signs On /<br />Prepares</strong></div>
+      <div class="cell stage" style="--accent:#fb923c"><span>05</span><strong>Crisis<br />Becomes Public</strong></div>
+      <div class="cell stage" style="--accent:#f87171"><span>06</span><strong>Trust<br />Collapses</strong></div>
+      <div class="cell stage" style="--accent:#cbd5e1"><span>07</span><strong>Aftermath /<br />Reflection</strong></div>
+
+      <div class="cell row-label">Actions</div>
+      <div class="cell"><p>Finds OceanGate through media, branding, or word of mouth.</p></div>
+      <div class="cell"><p>Researches expedition details, Titanic dive, credibility, and cost.</p></div>
+      <div class="cell"><p>Begins trusting OceanGate as credible and safe enough.</p></div>
+      <div class="cell"><p>Signs waivers, receives onboarding info, and prepares for the trip.</p></div>
+      <div class="cell"><p>Families, media, and the public follow updates after contact is lost.</p></div>
+      <div class="cell"><p>Public learns about safety concerns, warnings, and company issues.</p></div>
+      <div class="cell"><p>Public and regulators reflect on what failed and what should change.</p></div>
+
+      <div class="cell row-label">Touchpoints</div>
+      <div class="cell"><p>Website, promotional content, interviews, media coverage.</p></div>
+      <div class="cell"><p>Website, articles, videos, company materials.</p></div>
+      <div class="cell"><p>Brand voice, founder messaging, prestige framing, consultation.</p></div>
+      <div class="cell"><p>Waivers, emails, onboarding materials, pre-trip support.</p></div>
+      <div class="cell"><p>News alerts, public statements, social media, live coverage.</p></div>
+      <div class="cell"><p>Investigations, expert commentary, reports, press coverage.</p></div>
+      <div class="cell"><p>Investigations, public discussion, policy conversations.</p></div>
+
+      <div class="cell row-label">Emotions</div>
+      <div class="cell emotion"><p>Curious, impressed, excited.</p></div>
+      <div class="cell emotion"><p>Interested, cautious, uncertain.</p></div>
+      <div class="cell emotion"><p>Reassured, fascinated, committed.</p></div>
+      <div class="cell emotion"><p>Excited, nervous, dependent.</p></div>
+      <div class="cell emotion"><p>Fearful, confused, shocked.</p></div>
+      <div class="cell emotion"><p>Angry, disbelieving, distrustful.</p></div>
+      <div class="cell emotion"><p>Grieving, cautious, skeptical.</p></div>
+
+      <div class="cell row-label">Pain Points</div>
+      <div class="cell"><p>Risk is not fully visible during early brand discovery.</p></div>
+      <div class="cell"><p>Non-experts cannot easily judge technical legitimacy.</p></div>
+      <div class="cell"><p>Trust is shaped more by confidence and exclusivity than evidence.</p></div>
+      <div class="cell"><p>Legal consent does not always mean informed understanding.</p></div>
+      <div class="cell"><p>Information is fragmented, uncertain, and emotionally overwhelming.</p></div>
+      <div class="cell"><p>Credibility collapses because trust was not backed by safety transparency.</p></div>
+      <div class="cell"><p>Crisis reveals failures in ethics, oversight, and service design.</p></div>
+
+      <div class="cell row-label">OceanGate<br />Response</div>
+      <div class="cell response"><p>Promoted the expedition as aspirational and exclusive.</p></div>
+      <div class="cell response"><p>Relied on company-controlled credibility and messaging.</p></div>
+      <div class="cell response"><p>Used confidence, innovation, and founder authority to build trust.</p></div>
+      <div class="cell response"><p>Used waivers and onboarding to transfer risk to participants.</p></div>
+      <div class="cell response"><p>Public communication was limited while media shaped the story.</p></div>
+      <div class="cell response"><p>Prior safety concerns became central to public criticism.</p></div>
+      <div class="cell response"><p>Investigations shifted focus toward accountability and oversight.</p></div>
+
+      <div class="cell row-label">Opportunities</div>
+      <div class="cell opportunity"><p>Make safety and risk communication as visible as branding.</p></div>
+      <div class="cell opportunity"><p>Use plain-language safety disclosures and independent validation.</p></div>
+      <div class="cell opportunity"><p>Build trust through transparency, not just prestige.</p></div>
+      <div class="cell opportunity"><p>Redesign consent so users truly understand risk.</p></div>
+      <div class="cell opportunity"><p>Use clear, factual, humane crisis communication.</p></div>
+      <div class="cell opportunity"><p>Make accountability and third-party oversight visible.</p></div>
+      <div class="cell opportunity"><p>Build systems around ethical communication, independent review, and safety-first design.</p></div>
+    </main>
+
+    <section class="bottom">
+      <div class="box">
+        <h2>Emotional Journey</h2>
+        <p>excited → cautious → reassured → nervous → shocked → distrustful → skeptical</p>
+      </div>
+      <div class="box">
+        <h2>Key Takeaway</h2>
+        <div class="chips">
+          <span class="chip">Transparent risk</span>
+          <span class="chip">Independent validation</span>
+          <span class="chip">Better consent</span>
+          <span class="chip">Ethical trust</span>
+          <span class="chip">Crisis communication</span>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

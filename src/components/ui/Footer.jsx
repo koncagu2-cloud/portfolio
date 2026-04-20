@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { siteContact } from '../../data/siteContact.js'
 
 export function Footer() {
   return (
     <footer className="relative z-[1] border-t border-white/10 bg-black/10">
-      <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8">
+      <div className="mx-auto w-full max-w-7xl px-5 py-10 sm:px-8">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <div className="font-[Unbounded] text-xs tracking-[0.22em] text-white/55">
@@ -15,10 +16,31 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/70">
-            <FooterLink to="/projects" label="Projects" />
-            <FooterLink to="/resume" label="Resume" />
-            <FooterLink to="/contact" label="Contact" />
+          <div className="flex flex-col items-start gap-4 sm:items-end">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/70">
+              <FooterLink to="/projects" label="Projects" />
+              <FooterLink to="/resume" label="Resume" />
+              <FooterLink to="/contact" label="Contact" />
+            </div>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+              <a
+                href={`mailto:${siteContact.email}`}
+                className="text-white/55 transition hover:text-white/85"
+              >
+                {siteContact.email}
+              </a>
+              <span className="hidden text-white/25 sm:inline" aria-hidden>
+                ·
+              </span>
+              <a
+                href={siteContact.github.href}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="text-white/55 transition hover:text-white/85"
+              >
+                GitHub
+              </a>
+            </div>
           </div>
         </div>
 
