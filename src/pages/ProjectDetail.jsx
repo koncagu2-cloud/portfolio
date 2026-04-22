@@ -126,12 +126,12 @@ function OutcomeSection({ outcome, links = [] }) {
 
           <div className="rounded-3xl border border-white/10 bg-white/[0.035] p-5">
             <p className="font-[Unbounded] text-[10px] tracking-[0.18em] text-white/38">
-              RECRUITER NOTES
+              DESIGN TAKEAWAYS
             </p>
             <ul className="mt-4 grid gap-3 text-sm leading-relaxed text-white/62" role="list">
-              <li>Shows process evidence, not only final screens.</li>
-              <li>Connects UX decisions to user needs and constraints.</li>
-              <li>Keeps the story scannable with visuals and concise writing.</li>
+              <li>Research helped narrow the redesign around assignment discovery and submission confidence.</li>
+              <li>The strongest UI moments are the ones that reduce uncertainty: upcoming work, file upload, and confirmation.</li>
+              <li>The next improvement would be testing the upload flow with students and refining the edge cases around errors.</li>
             </ul>
 
             {links.length ? (

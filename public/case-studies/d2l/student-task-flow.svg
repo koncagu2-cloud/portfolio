@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">D2L student assignment task flow</title>
+  <desc id="desc">A user flow showing the student path from D2L entry to assignment submission confirmation.</desc>
+  <rect width="1600" height="900" fill="#f7faf8"/>
+  <rect x="64" y="60" width="1472" height="780" rx="34" fill="#ffffff" stroke="#d9e5df" stroke-width="3"/>
+  <text x="110" y="132" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800" fill="#123f35">Student assignment submission flow</text>
+  <text x="110" y="180" font-family="Inter, Arial, sans-serif" font-size="22" fill="#54736a">The final UI focuses on one high-value task: finding and submitting an assignment with confidence.</text>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2l8 4-8 4z" fill="#0b9a6d"/>
+    </marker>
+  </defs>
+  <g font-family="Inter, Arial, sans-serif">
+    <g fill="#eef7f3" stroke="#b9d8ce" stroke-width="3">
+      <rect x="126" y="304" width="220" height="92" rx="20"/>
+      <rect x="430" y="304" width="220" height="92" rx="20"/>
+      <rect x="734" y="304" width="220" height="92" rx="20"/>
+      <rect x="1038" y="304" width="220" height="92" rx="20"/>
+      <rect x="734" y="542" width="220" height="92" rx="20"/>
+      <rect x="1038" y="542" width="220" height="92" rx="20"/>
+    </g>
+    <g fill="#123f35" font-size="24" font-weight="700" text-anchor="middle">
+      <text x="236" y="360">Open D2L</text>
+      <text x="540" y="348">Choose</text><text x="540" y="378">course</text>
+      <text x="844" y="348">Open</text><text x="844" y="378">assignment</text>
+      <text x="1148" y="348">Add file</text><text x="1148" y="378">overlay</text>
+      <text x="844" y="586">Select file</text><text x="844" y="616">from finder</text>
+      <text x="1148" y="586">Submit and</text><text x="1148" y="616">confirm</text>
+    </g>
+    <g stroke="#0b9a6d" stroke-width="5" fill="none" marker-end="url(#arrow)">
+      <path d="M346 350h72"/>
+      <path d="M650 350h72"/>
+      <path d="M954 350h72"/>
+      <path d="M1148 396v114"/>
+      <path d="M1038 588h-72"/>
+    </g>
+    <rect x="126" y="704" width="1132" height="72" rx="20" fill="#18453b"/>
+    <text x="160" y="750" fill="#fff" font-size="24">Design focus: reduce uncertainty at every step with clearer navigation, fewer page jumps, and an explicit success state.</text>
+  </g>
+</svg>

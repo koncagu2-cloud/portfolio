@@ -59,7 +59,7 @@ export function CaseStudySection({ section, index = 0 }) {
   const [lightbox, setLightbox] = useState(null)
   const media = section.media ?? []
   const columns =
-    section.layout === 'single'
+    section.layout === 'single' || section.layout === 'showcase'
       ? 'grid-cols-1'
       : section.layout === 'grid'
         ? 'sm:grid-cols-2'
@@ -95,27 +95,32 @@ export function CaseStudySection({ section, index = 0 }) {
 
           <div className={`grid ${columns} gap-4`}>
             {media.length ? (
-              media.map((item, itemIndex) => (
-                <CaseStudyVisual
-                  key={`${item.label}-${itemIndex}`}
-                  image={item.file}
-                  href={item.href}
-                  label={item.label}
-                  title={item.title}
-                  description={item.description}
-                  caption={item.caption}
-                  onOpen={
-                    item.file && !item.href
-                      ? () => setLightbox({ src: publicAsset(item.file), alt: item.alt ?? item.title ?? item.label })
-                      : undefined
-                  }
-                />
-              ))
+              media.map((item, itemIndex) =>
+                item.type === 'insight' || !item.file ? (
+                  <InsightCard key={`${item.label}-${itemIndex}`} item={item} />
+                ) : (
+                  <CaseStudyVisual
+                    key={`${item.label}-${itemIndex}`}
+                    image={item.file}
+                    label={item.label}
+                    title={item.title}
+                    description={item.description}
+                    caption={item.caption}
+                    variant={section.layout === 'showcase' ? 'showcase' : item.variant}
+                    onOpen={() =>
+                      setLightbox({ src: publicAsset(item.file), alt: item.alt ?? item.title ?? item.label })
+                    }
+                  />
+                ),
+              )
             ) : (
-              <CaseStudyVisual
-                label="VISUAL SLOT"
-                title="Add supporting artifact"
-                description="Use this space for a research board, user flow, wireframe, UI screen, or prototype screenshot."
+              <InsightCard
+                item={{
+                  label: 'DESIGN NOTE',
+                  title: 'Artifact coming soon',
+                  description:
+                    'This section is intentionally text-only until there is a strong artifact worth showing.',
+                }}
               />
             )}
           </div>
@@ -186,7 +191,6 @@ export function PrototypeCTA({ prototype, projectTitle }) {
 
 function CaseStudyVisual({
   image,
-  href,
   label,
   title,
   description,
@@ -194,58 +198,48 @@ function CaseStudyVisual({
   className = '',
   priority = false,
   onOpen,
+  variant = 'standard',
 }) {
   const src = image ? publicAsset(image) : null
   const Wrapper = onOpen ? 'button' : 'div'
+  const isShowcase = variant === 'showcase'
 
   return (
-    <figure className={`overflow-hidden rounded-3xl border border-white/10 bg-black/25 ${className}`}>
+    <figure
+      className={`overflow-hidden rounded-3xl border border-white/10 bg-black/[0.18] shadow-[0_24px_90px_-54px_rgba(56,189,248,0.55)] ${className}`}
+    >
       <Wrapper
         type={onOpen ? 'button' : undefined}
         onClick={onOpen}
-        className={`group relative flex min-h-[19rem] w-full flex-col justify-between overflow-hidden p-5 text-left ${
+        className={`group block w-full overflow-hidden bg-[#f7faf8] text-left ${
           onOpen ? 'cursor-zoom-in' : ''
         }`}
       >
-        {src ? (
-          <img
-            src={src}
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover object-top opacity-90 transition duration-300 group-hover:scale-[1.015] group-hover:opacity-100"
-            loading={priority ? 'eager' : 'lazy'}
-            decoding="async"
-          />
-        ) : null}
-        <div className="absolute inset-0 bg-[radial-gradient(600px_260px_at_22%_8%,rgba(56,189,248,.24),transparent_58%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(560px_260px_at_88%_14%,rgba(124,58,237,.28),transparent_60%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/18 to-black/20" />
-        {!src ? <PlaceholderGrid /> : null}
-
-        <div className="relative">
-          <span className="inline-flex rounded-full border border-white/12 bg-black/35 px-3 py-1.5 font-[Unbounded] text-[10px] tracking-[0.16em] text-white/58 backdrop-blur">
-            {label}
-          </span>
-        </div>
-
-        <div className="relative max-w-md">
-          <h3 className="font-[Unbounded] text-lg tracking-[-0.03em] text-white/90">{title}</h3>
-          {description ? (
-            <p className="mt-2 text-sm leading-relaxed text-white/58">{description}</p>
-          ) : null}
-          {href ? (
-            <a
-              href={href}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="mt-4 inline-flex rounded-full border border-white/14 bg-white/[0.06] px-3 py-1.5 text-xs text-white/68 transition hover:border-white/22 hover:bg-white/[0.1] hover:text-white/90"
-            >
-              Open Figma frame
-            </a>
-          ) : null}
+        <div className={`relative w-full ${isShowcase ? 'aspect-[16/10]' : 'aspect-[16/9]'}`}>
+          {src ? (
+            <img
+              src={src}
+              alt=""
+              className="absolute inset-0 h-full w-full object-contain object-top transition duration-300 group-hover:scale-[1.01]"
+              loading={priority ? 'eager' : 'lazy'}
+              decoding="async"
+            />
+          ) : (
+            <PlaceholderGrid />
+          )}
         </div>
       </Wrapper>
+      <div className="px-5 py-5 sm:px-6">
+        <span className="font-[Unbounded] text-[10px] tracking-[0.18em] text-cyan-200/45">
+          {label}
+        </span>
+        <h3 className="mt-2 font-[Unbounded] text-lg tracking-[-0.03em] text-white/90">{title}</h3>
+        {description ? (
+          <p className="mt-2 text-sm leading-relaxed text-white/58">{description}</p>
+        ) : null}
+      </div>
       {caption ? (
-        <figcaption className="border-t border-white/10 px-5 py-3 text-xs leading-relaxed text-white/45">
+        <figcaption className="border-t border-white/10 px-5 py-4 text-xs leading-relaxed text-white/45 sm:px-6">
           {caption}
         </figcaption>
       ) : null}
@@ -253,17 +247,40 @@ function CaseStudyVisual({
   )
 }
 
+function InsightCard({ item }) {
+  return (
+    <article className="rounded-3xl border border-white/10 bg-white/[0.035] p-6">
+      <span className="font-[Unbounded] text-[10px] tracking-[0.18em] text-cyan-200/45">
+        {item.label}
+      </span>
+      <h3 className="mt-3 font-[Unbounded] text-lg tracking-[-0.03em] text-white/90">{item.title}</h3>
+      {item.description ? (
+        <p className="mt-3 text-sm leading-relaxed text-white/62">{item.description}</p>
+      ) : null}
+      {item.points?.length ? (
+        <ul className="mt-5 grid gap-2" role="list">
+          {item.points.map((point) => (
+            <li key={point} className="rounded-xl border border-white/10 bg-black/[0.15] px-4 py-3 text-sm text-white/62">
+              {point}
+            </li>
+          ))}
+        </ul>
+      ) : null}
+    </article>
+  )
+}
+
 function PlaceholderGrid() {
   return (
     <div className="absolute inset-0 opacity-35" aria-hidden>
-      <div className="absolute left-6 right-6 top-16 h-14 rounded-2xl border border-white/14 bg-white/[0.035]" />
-      <div className="absolute left-6 top-36 h-24 w-[42%] rounded-2xl border border-white/12 bg-white/[0.035]" />
-      <div className="absolute right-6 top-36 h-24 w-[42%] rounded-2xl border border-white/12 bg-white/[0.035]" />
+      <div className="absolute left-6 right-6 top-16 h-14 rounded-2xl border border-emerald-900/20 bg-emerald-900/[0.05]" />
+      <div className="absolute left-6 top-36 h-24 w-[42%] rounded-2xl border border-emerald-900/20 bg-emerald-900/[0.05]" />
+      <div className="absolute right-6 top-36 h-24 w-[42%] rounded-2xl border border-emerald-900/20 bg-emerald-900/[0.05]" />
       <div className="absolute bottom-20 left-6 right-6 grid grid-cols-4 gap-3">
-        <span className="h-12 rounded-xl border border-white/12 bg-white/[0.035]" />
-        <span className="h-12 rounded-xl border border-white/12 bg-white/[0.035]" />
-        <span className="h-12 rounded-xl border border-white/12 bg-white/[0.035]" />
-        <span className="h-12 rounded-xl border border-white/12 bg-white/[0.035]" />
+        <span className="h-12 rounded-xl border border-emerald-900/20 bg-emerald-900/[0.05]" />
+        <span className="h-12 rounded-xl border border-emerald-900/20 bg-emerald-900/[0.05]" />
+        <span className="h-12 rounded-xl border border-emerald-900/20 bg-emerald-900/[0.05]" />
+        <span className="h-12 rounded-xl border border-emerald-900/20 bg-emerald-900/[0.05]" />
       </div>
     </div>
   )

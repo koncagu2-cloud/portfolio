@@ -111,10 +111,16 @@ export const projects = [
               description: 'Grouped usability issues became product priorities for the redesign.',
             },
             {
-              label: 'INSIGHT CARDS',
+              type: 'insight',
+              label: 'KEY INSIGHTS',
               title: 'Interview themes',
               description:
-                'Add a compact visual of student quotes, pain points, or grouped research themes.',
+                'The strongest themes were orientation, assignment discovery, and confidence after submitting work.',
+              points: [
+                'Students needed clearer feedback about where they were in the system.',
+                'Assignment tasks needed fewer jumps between pages.',
+                'Confirmation and recovery states mattered as much as the main screen layout.',
+              ],
             },
           ],
         },
@@ -128,7 +134,7 @@ export const projects = [
           layout: 'grid',
           media: [
             {
-              file: 'case-studies/d2l/wireframes-and-sketches.svg',
+              file: 'case-studies/d2l/student-task-flow.svg',
               href: d2lFigmaNode('123-2'),
               label: 'USER FLOW',
               title: 'Dashboard to course action',
@@ -136,7 +142,7 @@ export const projects = [
                 'The student task flow maps how learners move from opening D2L to selecting a course, finding assignments, uploading a file, and confirming submission.',
             },
             {
-              href: d2lFigmaNode('160-2'),
+              type: 'insight',
               label: 'IA MODEL',
               title: 'Sketches and early structure',
               description:
@@ -161,10 +167,16 @@ export const projects = [
                 'Sketches and wireframes helped separate course planning, content discovery, and settings into clearer surfaces.',
             },
             {
+              type: 'insight',
               label: 'ITERATION',
               title: 'Hierarchy changes',
               description:
-                'Add a before/after frame showing how the layout became easier to scan.',
+                'The interface moved toward fewer competing regions, clearer course context, and stronger feedback at the end of the upload flow.',
+              points: [
+                'Course updates and upcoming work became the main visual priority.',
+                'The upload task became a focused overlay instead of a page-hopping experience.',
+                'The final confirmation state closes the loop for the student.',
+              ],
             },
           ],
         },
@@ -175,11 +187,10 @@ export const projects = [
           title: 'Final student prototype screens',
           body:
             'The final prototype focuses on a realistic student assignment flow: enter a course, review assignment details, add a file, choose the file, and receive a clear confirmation state.',
-          layout: 'grid',
+          layout: 'showcase',
           media: [
             {
               file: 'case-studies/d2l/final-ui-course-home.svg',
-              href: d2lFigmaNode('354-726'),
               label: 'COURSE HOME',
               title: 'Course landing page',
               description:
@@ -189,7 +200,6 @@ export const projects = [
             },
             {
               file: 'case-studies/d2l/final-ui-upload-overlay.svg',
-              href: d2lFigmaNode('378-486'),
               label: 'UPLOAD OVERLAY',
               title: 'Add file interaction',
               description:
@@ -199,7 +209,6 @@ export const projects = [
             },
             {
               file: 'case-studies/d2l/final-ui-finder.svg',
-              href: d2lFigmaNode('376-782'),
               label: 'FILE PICKER',
               title: 'Finder-style file selection',
               description:
@@ -209,7 +218,6 @@ export const projects = [
             },
             {
               file: 'case-studies/d2l/final-ui-confirmation.svg',
-              href: d2lFigmaNode('299-763'),
               label: 'CONFIRMATION',
               title: 'Submission success state',
               description:
@@ -250,7 +258,7 @@ export const projects = [
           },
         ],
         mediaNote:
-          'Images are part of the site bundle so anyone can view them. Export frames from Figma as PNG/WebP into public/case-studies/d2l/ (replace these placeholders or add entries in projects.js). Full Figma file: Related →.',
+          'These artifacts summarize the research and early structure so the case study remains readable without requiring Figma access.',
         findings: [
           {
             label: 'Visibility & navigation',
