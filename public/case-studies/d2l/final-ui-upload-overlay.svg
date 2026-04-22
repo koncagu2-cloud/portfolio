@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1024" role="img" aria-labelledby="title desc">
+  <title id="title">D2L file upload overlay</title>
+  <desc id="desc">A modal overlay for dragging or adding an assignment file.</desc>
+  <rect width="1440" height="1024" fill="#0f4438"/>
+  <rect width="1440" height="206" fill="#eef6f2" opacity=".65"/>
+  <text x="36" y="76" font-family="Inter, Arial, sans-serif" font-size="60" font-weight="800" fill="#17483d" opacity=".7">D2L</text>
+  <text x="133" y="284" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700" fill="#b9c9c4">Assignments → Project 4: Interface Redesign</text>
+  <rect x="133" y="305" width="562" height="179" rx="12" fill="#eef6f2" opacity=".55"/>
+  <rect x="133" y="583" width="749" height="341" rx="12" fill="#eef6f2" opacity=".55"/>
+  <text x="133" y="557" font-family="Inter, Arial, sans-serif" font-size="39" fill="#b9c9c4">DIRECTIONS</text>
+  <text x="133" y="990" font-family="Inter, Arial, sans-serif" font-size="32" fill="#b9c9c4">TEXT/COMMENTS</text>
+  <rect x="248" y="317" width="927" height="547" rx="40" fill="#fff"/>
+  <text x="298" y="382" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="700" fill="#17483d">Drag or Add File</text>
+  <rect x="298" y="783" width="193" height="49" rx="6" fill="#078730"/>
+  <text x="356" y="818" font-family="Inter, Arial, sans-serif" font-size="34" fill="#fff">Add File</text>
+  <rect x="610" y="783" width="193" height="49" rx="6" fill="#078730"/>
+  <text x="638" y="818" font-family="Inter, Arial, sans-serif" font-size="34" fill="#fff">Cancel</text>
+  <rect x="922" y="783" width="193" height="49" rx="6" fill="#078730"/>
+  <text x="956" y="818" font-family="Inter, Arial, sans-serif" font-size="34" fill="#fff">Submit</text>
+  <path d="M722 517v142M651 588h142" stroke="#2cc295" stroke-width="26" stroke-linecap="round"/>
+</svg>

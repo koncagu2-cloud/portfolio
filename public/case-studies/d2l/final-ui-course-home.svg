@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1024" role="img" aria-labelledby="title desc">
+  <title id="title">D2L redesigned course home screen</title>
+  <desc id="desc">A high fidelity course home interface with navigation, announcements, and upcoming content.</desc>
+  <rect width="1440" height="1024" fill="#0f4438"/>
+  <rect width="1440" height="114" fill="#ffffff"/>
+  <text x="36" y="76" font-family="Inter, Arial, sans-serif" font-size="60" font-weight="800" fill="#17483d">D2L</text>
+  <circle cx="1130" cy="57" r="25" fill="none" stroke="#17483d" stroke-width="7"/>
+  <circle cx="1210" cy="57" r="25" fill="none" stroke="#17483d" stroke-width="7"/>
+  <circle cx="1290" cy="57" r="25" fill="none" stroke="#17483d" stroke-width="7"/>
+  <rect x="1330" y="20" width="77" height="77" rx="8" fill="#2cc295"/>
+  <text x="1348" y="70" font-family="Inter, Arial, sans-serif" font-size="32" fill="#fff">AR</text>
+  <rect y="114" width="1440" height="92" fill="#eef6f2"/>
+  <text x="125" y="171" font-family="Inter, Arial, sans-serif" font-size="32" fill="#17483d">Content</text>
+  <text x="300" y="171" font-family="Inter, Arial, sans-serif" font-size="32" fill="#17483d">Assignments</text>
+  <text x="546" y="171" font-family="Inter, Arial, sans-serif" font-size="32" fill="#17483d">Assessments</text>
+  <text x="803" y="171" font-family="Inter, Arial, sans-serif" font-size="32" fill="#17483d">Resources</text>
+  <rect y="206" width="1440" height="183" fill="#d6dfdb"/>
+  <rect x="0" y="204" width="1440" height="187" fill="#c7d4cf"/>
+  <rect x="16" y="320" width="854" height="64" rx="6" fill="#103f34"/>
+  <text x="35" y="364" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700" fill="#fff">GD468 Interaction Design FS25</text>
+  <text x="35" y="467" font-family="Inter, Arial, sans-serif" font-size="36" fill="#fff">Announcements</text>
+  <rect x="35" y="485" width="673" height="560" rx="12" fill="#fff"/>
+  <text x="60" y="543" font-family="Inter, Arial, sans-serif" font-size="34" fill="#2384d1">Project 3 and Office Hours</text>
+  <text x="60" y="592" font-family="Inter, Arial, sans-serif" font-size="19" fill="#111">New slides and project overview files are available in Content.</text>
+  <line x1="60" y1="689" x2="680" y2="689" stroke="#2cc295" stroke-width="2"/>
+  <text x="60" y="739" font-family="Inter, Arial, sans-serif" font-size="34" fill="#2384d1">Project 1 Grades</text>
+  <text x="60" y="787" font-family="Inter, Arial, sans-serif" font-size="19" fill="#111">Project grading is underway. Contact the professor with questions.</text>
+  <line x1="60" y1="871" x2="680" y2="871" stroke="#2cc295" stroke-width="2"/>
+  <text x="60" y="921" font-family="Inter, Arial, sans-serif" font-size="34" fill="#2384d1">Class Cancelled</text>
+  <text x="60" y="970" font-family="Inter, Arial, sans-serif" font-size="19" fill="#111">Reminder to submit Project 2 by Sunday night.</text>
+  <text x="779" y="467" font-family="Inter, Arial, sans-serif" font-size="36" fill="#fff">Upcoming/Recent Content</text>
+  <rect x="779" y="485" width="628" height="454" rx="12" fill="#fff"/>
+  <text x="803" y="543" font-family="Inter, Arial, sans-serif" font-size="34" fill="#2384d1">Project 3</text>
+  <text x="1270" y="535" font-family="Inter, Arial, sans-serif" font-size="18" fill="#111">DUE IN 2 DAYS</text>
+  <text x="803" y="579" font-family="Inter, Arial, sans-serif" font-size="20" fill="#111">Due on November 21, 2025</text>
+  <line x1="798" y1="588" x2="1388" y2="588" stroke="#2cc295" stroke-width="2"/>
+  <text x="803" y="635" font-family="Inter, Arial, sans-serif" font-size="34" fill="#2384d1">Project 1 PPT</text>
+  <text x="1012" y="625" font-family="Inter, Arial, sans-serif" font-size="18" fill="#0b9a6d">NEW!</text>
+  <text x="1239" y="628" font-family="Inter, Arial, sans-serif" font-size="18" fill="#111">TODAY AT 3:59 PM</text>
+  <line x1="798" y1="680" x2="1388" y2="680" stroke="#2cc295" stroke-width="2"/>
+</svg>

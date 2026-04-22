@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1068" role="img" aria-labelledby="title desc">
+  <title id="title">D2L file finder screen</title>
+  <desc id="desc">A finder-style modal for choosing an assignment file.</desc>
+  <rect width="1440" height="1068" fill="#0f4438"/>
+  <rect width="1440" height="206" fill="#eef6f2" opacity=".65"/>
+  <text x="36" y="76" font-family="Inter, Arial, sans-serif" font-size="60" font-weight="800" fill="#17483d" opacity=".7">D2L</text>
+  <text x="133" y="284" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700" fill="#b9c9c4">Assignments → Project 4: Interface Redesign</text>
+  <rect x="248" y="317" width="927" height="547" rx="40" fill="#fff"/>
+  <text x="221" y="212" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="800" fill="#fff">Your Finder</text>
+  <line x1="818" y1="317" x2="819" y2="864" stroke="#888" stroke-width="2"/>
+  <g font-family="Inter, Arial, sans-serif" font-size="24">
+    <rect x="273" y="357" width="171" height="41" rx="6" fill="#17483d"/><text x="315" y="386" fill="#fff">Recents</text>
+    <rect x="273" y="425" width="171" height="41" rx="6" fill="#17483d"/><text x="313" y="454" fill="#fff">Desktop</text>
+    <rect x="273" y="499" width="171" height="41" rx="6" fill="#17483d"/><text x="295" y="528" fill="#fff">Documents</text>
+    <rect x="273" y="570" width="171" height="41" rx="6" fill="#17483d"/><text x="296" y="599" fill="#fff">Downloads</text>
+    <rect x="273" y="645" width="171" height="41" rx="6" fill="#17483d"/><text x="305" y="674" fill="#fff">GD Work</text>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" font-size="22" fill="#111">
+    <text x="470" y="382">LastName_Assign1.jpg</text>
+    <text x="470" y="416">LastName_Assign3.jpg</text>
+    <text x="470" y="444">LastName_Assign4.jpg</text>
+    <text x="470" y="471">LastName_Assign5.jpg</text>
+    <text x="470" y="496">LastName_Assign6.jpg</text>
+    <text x="470" y="523">LastName_Assign7.jpg</text>
+    <text x="470" y="549">LastName_Assign8.jpg</text>
+    <text x="470" y="575">LastName_Assign9.jpg</text>
+    <text x="470" y="600">LastName_Assign10.jpg</text>
+    <text x="470" y="625">LastName_Assign11.jpg</text>
+    <text x="470" y="649">LastName_Assign12.jpg</text>
+    <text x="470" y="673">LastName_Assign13.jpg</text>
+    <text x="470" y="698">LastName_Assign14.jpg</text>
+  </g>
+  <rect x="837" y="815" width="136" height="34" rx="6" fill="#078730"/>
+  <text x="870" y="839" font-family="Inter, Arial, sans-serif" font-size="24" fill="#fff">Close</text>
+  <rect x="996" y="815" width="136" height="34" rx="6" fill="#078730"/>
+  <text x="1048" y="839" font-family="Inter, Arial, sans-serif" font-size="24" fill="#fff">Add</text>
+</svg>

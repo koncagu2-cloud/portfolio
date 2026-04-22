@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1024" role="img" aria-labelledby="title desc">
+  <title id="title">D2L submission confirmation screen</title>
+  <desc id="desc">A confirmation modal after a student submits an assignment file.</desc>
+  <rect width="1440" height="1024" fill="#0f4438"/>
+  <rect width="1440" height="206" fill="#eef6f2" opacity=".65"/>
+  <text x="36" y="76" font-family="Inter, Arial, sans-serif" font-size="60" font-weight="800" fill="#17483d" opacity=".7">D2L</text>
+  <text x="133" y="284" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700" fill="#b9c9c4">Assignments → Project 4: Interface Redesign</text>
+  <rect x="133" y="305" width="562" height="179" rx="12" fill="#eef6f2" opacity=".55"/>
+  <rect x="133" y="583" width="749" height="341" rx="12" fill="#eef6f2" opacity=".55"/>
+  <rect x="248" y="317" width="927" height="547" rx="40" fill="#fff"/>
+  <text x="304" y="393" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="800" fill="#17483d">Submission Confirmed</text>
+  <text x="720" y="500" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="48" fill="#111">
+    <tspan x="720" dy="0">You have submitted your</tspan>
+    <tspan x="720" dy="55">file! You will receive a</tspan>
+    <tspan x="720" dy="55">confirmation email to your</tspan>
+    <tspan x="720" dy="55">MSU account.</tspan>
+  </text>
+  <rect x="618" y="793" width="193" height="49" rx="6" fill="#078730"/>
+  <text x="673" y="828" font-family="Inter, Arial, sans-serif" font-size="34" fill="#fff">Done</text>
+</svg>

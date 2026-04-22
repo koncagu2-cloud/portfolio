@@ -7,6 +7,9 @@
  * - `year`: optional string for card meta (e.g. "2026").
  */
 
+const D2L_FIGMA_FILE = 'https://www.figma.com/design/piRHnDp4bwoVkKMo1mHSt7/Team--1'
+const d2lFigmaNode = (nodeId) => `${D2L_FIGMA_FILE}?node-id=${nodeId}&m=dev`
+
 export const projects = [
   {
     slug: 'd2l-redesign',
@@ -29,6 +32,13 @@ export const projects = [
     tags: ['Product UX', 'IA', 'Frontend prototype'],
     caseStudy: {
       heroLabel: 'Modern LMS · D2L-inspired prototype',
+      heroImage: 'case-studies/d2l/final-ui-course-home.svg',
+      heroVisualTitle: 'Final student course home',
+      heroVisualDescription:
+        'A high-fidelity student interface focused on clearer course navigation, announcements, and upcoming content.',
+      shortSummary:
+        'A student-first LMS redesign that turns research findings into clearer navigation, stronger course planning, and a working React prototype.',
+      timeline: 'Fall 2025',
       overview:
         'This project is a full interactive build (not a static mock): a next-gen LMS concept grounded in team research on the live D2L/Brightspace experience — heuristic evaluation (NN/g), structured interview questions, and qualitative synthesis in Figma — then translated into a student-first product. I implemented it as a React + TypeScript + Vite application with Tailwind and Framer Motion, using a clear app shell (`/app`) so flows feel like a real product: dashboard, course list and course detail, calendar, settings, profile/help, and messaging as a scaffold. A standalone cover route frames the work for critique and gallery-style walkthroughs.',
       problem:
@@ -55,6 +65,168 @@ export const projects = [
       ],
       solution:
         'The solution pairs research-backed priorities with a modern student dashboard model: predictable shell navigation, a dashboard that foregrounds deadlines and course progress, courses with scannable structure and search, and a calendar aligned with how students plan work — plus a Computational Thinking thread for presentation. The prototype intentionally does not recreate every D2L surface; it demonstrates how IA and UI decisions respond to the issues we documented. Messaging stays stubbed; a public deploy link can sit next to this case study when you ship the build.',
+      visualSections: [
+        {
+          id: 'case-problem',
+          navLabel: 'Problem',
+          eyebrow: 'PROBLEM / GOAL',
+          title: 'Students needed faster orientation',
+          body:
+            'The core design challenge was not making D2L look newer. It was reducing the work students do just to understand where they are, what needs attention, and where to go next.',
+          points: [
+            'Make upcoming work and course progress easier to scan.',
+            'Keep navigation stable across dashboard, courses, calendar, and settings.',
+            'Use accessibility and clear hierarchy as design constraints from the start.',
+          ],
+          layout: 'single',
+          media: [
+            {
+              file: 'case-studies/d2l/heuristic-evaluation-board.svg',
+              label: 'RESEARCH EVIDENCE',
+              title: 'Heuristic audit board',
+              description:
+                'The redesign began with a structured review of visibility, consistency, navigation, and user control issues.',
+              caption: 'NN/g heuristic evaluation board used to capture friction before UI redesign.',
+            },
+          ],
+        },
+        {
+          id: 'case-insights',
+          navLabel: 'Insights',
+          eyebrow: 'RESEARCH / INSIGHTS',
+          title: 'Findings that shaped the prototype',
+          body:
+            'The research pointed toward a practical student dashboard model: fewer competing regions, clearer active states, and stronger planning support.',
+          points: [
+            'Students needed better “you are here” feedback.',
+            'Course pages buried the most important actions and dates.',
+            'Help and recovery needed to feel closer to the task, not like a separate website.',
+          ],
+          layout: 'grid',
+          media: [
+            {
+              file: 'case-studies/d2l/heuristic-evaluation-board.svg',
+              label: 'SYNTHESIS',
+              title: 'Patterns from the audit',
+              description: 'Grouped usability issues became product priorities for the redesign.',
+            },
+            {
+              label: 'INSIGHT CARDS',
+              title: 'Interview themes',
+              description:
+                'Add a compact visual of student quotes, pain points, or grouped research themes.',
+            },
+          ],
+        },
+        {
+          id: 'case-flow',
+          navLabel: 'Flow / IA',
+          eyebrow: 'INFORMATION ARCHITECTURE',
+          title: 'A simpler product structure',
+          body:
+            'I organized the prototype around the routes students would use most often: dashboard, courses, course detail, calendar, settings, and help.',
+          layout: 'grid',
+          media: [
+            {
+              file: 'case-studies/d2l/wireframes-and-sketches.svg',
+              href: d2lFigmaNode('123-2'),
+              label: 'USER FLOW',
+              title: 'Dashboard to course action',
+              description:
+                'The student task flow maps how learners move from opening D2L to selecting a course, finding assignments, uploading a file, and confirming submission.',
+            },
+            {
+              href: d2lFigmaNode('160-2'),
+              label: 'IA MODEL',
+              title: 'Sketches and early structure',
+              description:
+                'Moodboards and sketches helped shape the calm, organized visual direction before high-fidelity screens.',
+            },
+          ],
+        },
+        {
+          id: 'case-wireframes',
+          navLabel: 'Wireframes',
+          eyebrow: 'WIREFRAMES / EXPLORATION',
+          title: 'Structure before polish',
+          body:
+            'Early wireframes focused on hierarchy: what should be visible first, which actions belong together, and how much context a student needs at each step.',
+          layout: 'grid',
+          media: [
+            {
+              file: 'case-studies/d2l/wireframes-and-sketches.svg',
+              label: 'WIREFRAMES',
+              title: 'Early layout exploration',
+              description:
+                'Sketches and wireframes helped separate course planning, content discovery, and settings into clearer surfaces.',
+            },
+            {
+              label: 'ITERATION',
+              title: 'Hierarchy changes',
+              description:
+                'Add a before/after frame showing how the layout became easier to scan.',
+            },
+          ],
+        },
+        {
+          id: 'case-final-ui',
+          navLabel: 'Final UI',
+          eyebrow: 'FINAL UI',
+          title: 'Final student prototype screens',
+          body:
+            'The final prototype focuses on a realistic student assignment flow: enter a course, review assignment details, add a file, choose the file, and receive a clear confirmation state.',
+          layout: 'grid',
+          media: [
+            {
+              file: 'case-studies/d2l/final-ui-course-home.svg',
+              href: d2lFigmaNode('354-726'),
+              label: 'COURSE HOME',
+              title: 'Course landing page',
+              description:
+                'Announcements and upcoming content sit side by side so students can quickly understand what changed and what needs attention.',
+              caption:
+                'Final hi-fi course screen from the student prototype. The layout prioritizes course updates and recent assignments.',
+            },
+            {
+              file: 'case-studies/d2l/final-ui-upload-overlay.svg',
+              href: d2lFigmaNode('378-486'),
+              label: 'UPLOAD OVERLAY',
+              title: 'Add file interaction',
+              description:
+                'The upload modal keeps students in context while giving clear actions: add file, cancel, or submit.',
+              caption:
+                'The overlay reduces page switching and makes the upload task feel like one focused action.',
+            },
+            {
+              file: 'case-studies/d2l/final-ui-finder.svg',
+              href: d2lFigmaNode('376-782'),
+              label: 'FILE PICKER',
+              title: 'Finder-style file selection',
+              description:
+                'A simplified finder pattern supports recognition over recall by showing familiar file locations and file names.',
+              caption:
+                'The file picker models the moment where the student chooses a project file before submitting.',
+            },
+            {
+              file: 'case-studies/d2l/final-ui-confirmation.svg',
+              href: d2lFigmaNode('299-763'),
+              label: 'CONFIRMATION',
+              title: 'Submission success state',
+              description:
+                'A clear confirmation message closes the loop and reassures the student that the submission was received.',
+              caption:
+                'The success state improves feedback and reduces uncertainty after submitting coursework.',
+            },
+          ],
+        },
+      ],
+      prototype: {
+        href: d2lFigmaNode('251-114'),
+        title: 'View the final student hi-fi prototype',
+        description:
+          'The Figma prototype shows the final student assignment flow, including the course home, assignment detail, upload overlay, finder-style file selection, and confirmation state.',
+        note: 'Opens the Hi-fi Student page in the Team 1 Figma file.',
+      },
       researchBlock: {
         title: 'Research & evaluation',
         intro:
