@@ -1,39 +1,92 @@
-# Suleyman Koncagul — Portfolio
+# Suleyman Koncagul Portfolio
 
-Modern personal portfolio built with **React + Vite**, **Tailwind CSS**, **Framer Motion**, and **React Router**.
+Personal UX and frontend portfolio for showcasing case studies, interaction design, and frontend implementation work.
 
-## Local development
+Live site:
+
+https://suleymankoncagul.com
+
+## About
+
+This portfolio presents my work as a UX / Frontend student, with a focus on information architecture, accessibility, visual hierarchy, interaction design, and system thinking.
+
+The site is built as a modern React portfolio with project pages, case study content, animated transitions, and responsive layouts.
+
+## Tech Stack
+
+- React
+- Vite
+- Tailwind CSS
+- React Router
+- Framer Motion
+- GitHub Pages
+- GitHub Actions
+
+## Project Structure
+
+```text
+src/
+├── app/          # App shell and routes
+├── components/   # Reusable UI and layout components
+├── data/         # Portfolio project data and site content
+├── hooks/        # Custom React hooks
+├── lib/          # Utility functions
+├── pages/        # Main site pages and case study pages
+├── styles/       # Global styles and design helpers
+└── assets/       # Images and visual assets
+```
+
+## UX Focus
+
+This portfolio is designed to communicate both design thinking and implementation ability.
+
+Key focus areas include:
+
+- Clear information architecture
+- Recruiter-friendly project navigation
+- Accessible focus states and readable hierarchy
+- Responsive layouts for desktop and mobile
+- Case-study structure that connects research, process, and outcomes
+- Motion used to support orientation, not distract from content
+
+## Local Development
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Production build
+## Production Build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## Content updates
+## Deployment
 
-- Résumé layout lives in `src/components/resume/ResumeDesign.jsx` + `src/styles/resume-design.css`; the Resume page generates a PDF in the browser from that layout.
-- Update contact links in `src/pages/Contact.jsx`.
-- Edit project content in `src/data/projects.js`.
+The site deploys through GitHub Actions to GitHub Pages.
 
-## Deployment (GitHub Pages)
+The custom domain is configured with:
 
-This repo deploys automatically on every push to `main` via `.github/workflows/deploy.yml`.
+```text
+public/CNAME
+```
 
-- **Custom domain (default)**: CI builds with **`VITE_BASE=/`** so **`https://suleymankoncagul.com`** loads correctly.
-- **GitHub.io project URL only**: If you need `https://<user>.github.io/<repo>/`, set repository variable **`VITE_BASE`** to **`/<repo>/`** (e.g. `/portfolio/`).
+Current domain:
 
-## Custom domain (GitHub Pages + DNS)
+```text
+suleymankoncagul.com
+```
 
-1. Point DNS at GitHub (see **`docs/DNS-CLOUDFLARE.md`** for A/AAAA/CNAME records).
-2. **GitHub → repo → Settings → Pages → Custom domain** — add **`suleymankoncagul.com`**, wait for **DNS check** ✓, enable **Enforce HTTPS** when ready.
-3. **`public/CNAME`** in this repo keeps the domain on deploy; push to `main` so Actions publishes.
-4. Optional **`www`**: add **`www.suleymankoncagul.com`** in Pages and a CNAME in DNS, or redirect **www → apex** in your DNS host.
+## Content Updates
 
-Alternatively, deploy on **Vercel/Netlify** and attach the domain there if you prefer.
+- Project content lives in `src/data/projects.js`
+- Main pages live in `src/pages`
+- Reusable sections/components live in `src/components`
+- Global design styles live in `src/styles/globals.css`
+
+## Notes
+
+This repository is focused on portfolio presentation, clarity, and maintainability rather than unnecessary complexity.
+
