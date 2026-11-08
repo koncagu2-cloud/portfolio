@@ -1,7 +1,0 @@
-[
-  { "path": "/", "image": "portfolio", "title": "Suleyman Koncagul", "summary": "UX / Product Designer", "alt": "Suleyman Koncagul — UX / Product Designer. Information architecture, interaction design, and frontend implementation." },
-  { "path": "/work/d2l-redesign/", "image": "d2l", "title": "D2L Redesign", "summary": "Assignment requirements and submission states. Collaborative academic project.", "alt": "D2L Redesign — collaborative academic work on assignment requirements and submission states." },
-  { "path": "/work/community-spaces/", "image": "community-spaces", "title": "Community Spaces", "summary": "Connecting a proposed shared space with event participation. Collaborative academic project.", "alt": "Community Spaces — a collaborative shared-space and event-participation concept." },
-  { "path": "/work/apple-ring/", "image": "apple-ring", "title": "Apple Ring", "summary": "A proposed Ring–Watch handoff. Independent, AI-assisted concept. Not affiliated with Apple.", "alt": "Apple Ring — independent, AI-assisted concept exploring a proposed Ring–Watch handoff." },
-  { "path": "/work/align/", "image": "align", "title": "ALIGN", "summary": "Understand the opportunity before committing. Independent product concept.", "alt": "ALIGN — an independent product concept for understanding job conditions, evidence and unknowns before applying." }
-]

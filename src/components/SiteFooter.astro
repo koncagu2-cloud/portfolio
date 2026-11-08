@@ -1,6 +1,0 @@
----
-import { site } from '../data/site';
-import { indexingEnabled } from '../data/production';
-const homePrefix = Astro.url.pathname === import.meta.env.BASE_URL ? '' : import.meta.env.BASE_URL;
----
-<footer class="container site-footer"><span>{site.name}</span><span>{indexingEnabled ? site.role : 'Portfolio V2 · Review only'}</span><a href={`${homePrefix}#contact`}>Contact</a><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>

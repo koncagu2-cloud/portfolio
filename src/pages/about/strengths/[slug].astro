@@ -1,9 +1,0 @@
----
-import LegacyRedirect from '../../../components/LegacyRedirect.astro';
-
-export function getStaticPaths() {
-  return ['system-thinking-ia-ui', 'accessible-interaction-design', 'story-driven-case-studies', 'frontend-polish-for-prototypes']
-    .map(slug => ({ params: { slug } }));
-}
----
-<LegacyRedirect destination="/#capabilities" label="Explore the capabilities section in the new portfolio" />

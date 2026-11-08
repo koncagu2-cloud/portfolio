@@ -1,7 +1,0 @@
-{
-  "Content-Security-Policy": "default-src 'self'; script-src 'self' 'sha256-/TVkknTBi8fWxCtApNmo1L+or8K9KCxLbG7A2Pqgu+M=' 'sha256-6NCjVkgg4EHpAD9mVPMg5Pv0KwhYFj9ooo232HuESXo=' 'sha256-8JayTRpvg8IAKiGTvt/1KGCjCHk5BU7PTddbaNrSS6g=' 'sha256-BRmtB2Xyem/6s4eOKoG+C5nlf7xdNmpHJBbXg2ydxVs=' 'sha256-ev0ovrbDCAYMhE3aS7oZ2a1Lho3xfMdk27qfPtHmnB8=' 'sha256-iYrJ07ylmTG+u8ABrORabf2qPpp7PD9BOS/YGB4sfPw=' 'sha256-y9AYeFRW5sog6pp98RDWzWo4caa0ANhpFXOwvDe14no='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
-  "X-Content-Type-Options": "nosniff",
-  "Referrer-Policy": "strict-origin-when-cross-origin",
-  "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-  "X-Frame-Options": "DENY"
-}

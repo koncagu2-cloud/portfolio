@@ -1,18 +1,24 @@
-node_modules/
-dist/
-.astro/
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
-test-results/
-playwright-report/
-.env
-.env.*
-!.env.example
-
-# Generated evaluation bundle and optional local hosting connection
-staging-dist/
-.netlify/
-
-# Local authentication handoff screenshot; never part of a deployment
-docs/staging/netlify-auth-request.png
-
-docs/staging/netlify-onboarding-request.png
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
