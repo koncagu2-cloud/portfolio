@@ -1,0 +1,18 @@
+{
+  "version": "r180",
+  "adaptation": "Only ESM import paths changed to reuse existing r180 runtime; no CDN requests.",
+  "files": [
+    {
+      "file": "GLTFLoader.js",
+      "source": "https://raw.githubusercontent.com/mrdoob/three.js/r180/examples/jsm/loaders/GLTFLoader.js",
+      "upstreamSHA256": "67ac5551fdafa6e349bd80c8f8e5e39c136d6b2fb1ad647db9abb21dc86f9e4a",
+      "localSHA256": "1f3cbb74fd60a42186db494bef7a17c0642db5a550b7e10a700c15828c91a7ac"
+    },
+    {
+      "file": "BufferGeometryUtils.js",
+      "source": "https://raw.githubusercontent.com/mrdoob/three.js/r180/examples/jsm/utils/BufferGeometryUtils.js",
+      "upstreamSHA256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751",
+      "localSHA256": "b10c5c9f1da23e99d59d4a252a2f9a3abc76ce6447dc8300b6c19270186899dc"
+    }
+  ]
+}

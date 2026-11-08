@@ -1,0 +1,1 @@
+import {jobs} from './data.js';import {emptyState} from './model.js';import {head,brief} from './views.js';document.querySelector('#brief-examples').innerHTML=jobs.map(j=>`<article class="opportunity">${head(j)}${brief(j,emptyState())}</article>`).join('');
