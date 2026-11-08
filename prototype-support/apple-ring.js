@@ -1,3 +1,9 @@
+if (new URLSearchParams(location.search).get('from') === 'handoff') {
+  const returnLink = document.querySelector('.portfolio-context a');
+  returnLink.hash = 'try-handoff';
+  returnLink.textContent = '← Back to the handoff case study section';
+}
+
 // Portfolio presentation support; the exported concept's behavior and sample data stay intact.
 // Reveal results only when their heading would be outside the usable viewport.
 function revealResult(heading, { dialog = false } = {}) {
