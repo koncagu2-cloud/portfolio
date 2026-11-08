@@ -22,3 +22,23 @@ document.querySelectorAll('[data-day-stage]').forEach(button => {
     revealResult(document.querySelector('#day-phone-title'), { dialog: true });
   });
 });
+
+// The outage controls sit above the result on narrow screens. Expose their
+// effect without moving focus away from a checkbox someone may toggle again.
+for (const id of ['handoff-missing', 'handoff-disconnected']) {
+  const control = document.getElementById(id);
+  control?.setAttribute('aria-controls', 'handoff-value handoff-sync');
+  control?.setAttribute('aria-describedby', 'handoff-value');
+}
+
+// Show the result beside the scenario controls as well as inside the device.
+const handoffValue = document.getElementById('handoff-value');
+const options = document.querySelector('.handoff-options');
+if (handoffValue && options) {
+  const result = document.createElement('p');
+  result.className = 'handoff-sample-result';
+  options.after(result);
+  const sync = () => { result.textContent = 'Sample result · ' + handoffValue.textContent; };
+  new MutationObserver(sync).observe(handoffValue, { childList: true, characterData: true, subtree: true });
+  sync();
+}
