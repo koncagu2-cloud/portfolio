@@ -1,1 +1,0 @@
-import"./hero-perspectives.Chs2h8f6.js";
