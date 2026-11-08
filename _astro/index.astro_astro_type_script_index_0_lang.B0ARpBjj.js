@@ -1,1 +1,0 @@
-import"./hero-perspectives.DpN7Jh7n.js";
