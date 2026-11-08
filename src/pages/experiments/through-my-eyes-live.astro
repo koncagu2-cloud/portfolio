@@ -1,0 +1,67 @@
+---
+import {site} from '../../data/site';
+import HeroPerspectives from '../../experiments/through-my-eyes-live/HeroPerspectives.astro';
+import ProjectChapters from '../../experiments/through-my-eyes-live/ProjectChapters.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {d2lAssets as d2l} from '../../data/d2l-assets';
+import '../../experiments/through-my-eyes-live/experience.css';
+import '../../experiments/through-my-eyes-live/visual-polish.css';
+import '../../experiments/through-my-eyes-live/entrance.css';
+import '../../experiments/through-my-eyes-live/creative-upgrade.css';
+import '../../experiments/through-my-eyes-live/scenes.css';
+import '../../experiments/through-my-eyes-live/signature-entrance.css';
+import '../../experiments/through-my-eyes-live/hero-perspectives.css';
+import '../../experiments/through-my-eyes-live/scene-refinement.css';
+import '../../experiments/through-my-eyes-live/accessibility.css';
+import '../../experiments/through-my-eyes-live/closing.css';
+import '../../experiments/through-my-eyes-live/project-access.css';
+import '../../experiments/through-my-eyes-live/typography.css';
+import '../../experiments/through-my-eyes-live/cinematic-editorial.css';
+import D2LChapterVideo from '../../experiments/through-my-eyes-live/D2LChapterVideo.astro';
+---
+<BaseLayout title="Through My Eyes — Suleyman Koncagul" description="UX and Product Design through four perspectives: D2L, Apple Ring, Community Spaces and ALIGN. An independent interactive portfolio by Suleyman Koncagul." noindex>
+<script is:inline>
+ try { document.documentElement.dataset.tmeEntrance = (!location.hash || location.hash === '#perspective') && !matchMedia('(prefers-reduced-motion: reduce)').matches ? 'pending' : 'off'; } catch {}
+</script>
+<div class="tme" data-tme data-phase="intro">
+<div class="tme-signature-opening" data-signature-opening aria-label="Through My Eyes introduction">
+ <div class="tme-signature-outline" aria-hidden="true"><i class="signature-arm signature-arm-left"></i><i class="signature-arm signature-arm-right"></i><i class="signature-rim signature-rim-left"></i><i class="signature-bridge"></i><i class="signature-rim signature-rim-right"></i></div>
+ <div class="tme-signature-caption"><p>Through My Eyes</p><span role="status">Preparing the portrait…</span></div>
+ <div class="tme-signature-actions"><button type="button" data-opening-skip>Skip intro ↗</button><a href="#project-selection" data-selection>View work now ↗</a></div>
+</div>
+<header class="tme-nav"><a href="#perspective" class="tme-mark" aria-label="Through My Eyes, introduction">SK<span>Through My Eyes</span></a><nav aria-label="Experience navigation"><a href="#project-selection" data-selection>All perspectives <span aria-hidden="true">↘</span></a><a href="/">Portfolio ↗</a></nav></header>
+<main id="main" tabindex="-1">
+<section class="tme-journey" id="perspective" aria-labelledby="tme-title"><div class="tme-stage" data-stage>
+  <div class="tme-type"><p class="tme-eyebrow"><span>Suleyman Koncagul</span> UX & Product Designer</p><h1 id="tme-title"><span class="tme-through-word">Through</span> <span class="tme-eyes-line">my <em>eyes.</em></span></h1><p class="tme-intro">I design the structure, interfaces, and interactions<br class="tme-desktop-break"/> that help people know what happens next.</p><button type="button" class="tme-enter tme-scanner-launch" data-scanner-toggle aria-controls="hero-projects" aria-expanded="false">Scan perspectives <span aria-hidden="true">↗</span></button><a class="tme-d2l-entry" href="#d2l-world" aria-describedby="tme-lens-guidance" data-enter>Enter through the lens <span aria-hidden="true">↗</span></a><p class="tme-lens-guidance" id="tme-lens-guidance"><span class="tme-guide-pointer">Scroll through the glasses into D2L.</span><span class="tme-guide-touch">Swipe up, or tap the link to explore D2L.</span><span class="tme-guide-reduced">Open D2L directly, without the camera journey.</span></p></div>
+  <HeroPerspectives />
+  <div class="tme-portrait-frame" aria-hidden="true"></div><div class="tme-character"><img class="tme-poster" src="/experiments/through-my-eyes-live/studio-cap-fit-poster.png" width="640" height="640" alt="Stylized portrait with short dark hair, a fitted graphite cap and thin glasses" fetchpriority="high"/><canvas data-canvas aria-hidden="true"></canvas></div>
+  <div class="tme-portal" data-portal aria-hidden="true" inert><div class="tme-portal-content" data-portal-content></div></div>
+  <div class="tme-lens-caption" aria-hidden="true"><span>01 / A clearer choice</span><strong>A different perspective.</strong></div>
+
+  <div class="tme-utilities"><button type="button" data-soundtrack-toggle aria-pressed="false" aria-label="Play portfolio soundtrack">Play soundtrack</button><button type="button" data-pause aria-pressed="false">Pause motion</button><button type="button" data-reduce aria-pressed="false">Reduce motion</button><a href="#d2l-world" data-skip>D2L, without motion ↓</a></div>
+  <audio data-soundtrack src={`${import.meta.env.BASE_URL}audio/through-my-eyes-loop.wav`} preload="none" loop></audio><span class="sr-only" data-soundtrack-status role="status" aria-live="polite"></span>
+  <div class="tme-lens-controls" data-lens-controls hidden><a href="#d2l-world" data-lens-skip>Skip to D2L ↓</a><button type="button" data-lens-cancel>Cancel transition</button></div>
+  <div class="tme-stage-index" aria-hidden="true"><span>UX / Product / Interaction</span><span>Explore the work below ↓</span></div>
+  <p class="tme-status" data-status role="status">Loading the character. The project is available below.</p>
+</div></section>
+<ProjectChapters selectionOnly />
+<section class="tme-world" id="d2l-world" tabindex="-1" aria-labelledby="d2l-world-title">
+ <div class="tme-world-nav"><span class="tme-eyebrow">01 / Clarity · D2L Redesign</span><a href="#perspective" data-return>← Return to the character</a><a href="#project-selection" data-selection>All perspectives →</a></div>
+ <header class="tme-world-intro"><div><p class="tme-eyebrow">A decision before a deadline.</p><h2 id="d2l-world-title">Which file<br/>will <em>count?</em></h2><p>A file is chosen.<br/>Is it the one you meant to submit?</p><p class="tme-role-summary">Shared academic work · Heuristic evaluation, task mapping and prototyping.</p><div class="tme-opening-actions"><a class="tme-chapter-link tme-primary-action" href="https://www.figma.com/proto/piRHnDp4bwoVkKMo1mHSt7/Team--1?page-id=554%3A550&amp;node-id=554-1219&amp;scaling=scale-down&amp;content-scaling=fixed" target="_blank" rel="noopener noreferrer">Try the prototype <span class="sr-only"> — Original Figma (new tab)</span>↗</a><a href="/work/d2l-redesign/" data-reader="case" data-title="D2L — Case study" class="tme-chapter-link">Read the case study ↗</a></div></div><D2LChapterVideo /><details class="tme-opening-detail"><summary>Design decision and contribution</summary><p class="tme-opening-role"><strong>My role / Shared academic work</strong>Heuristic evaluation, task mapping, interface exploration and prototyping. <span>Decision: expose the chosen filename before the submission action.</span></p></details></header>
+ <div class="tme-world-rule"><span class="tme-eyebrow">From interface to interaction</span><p>One choice.<br/><em>No guessing.</em></p></div>
+ <section class="tme-demo" id="d2l-interaction" aria-labelledby="demo-title"><div class="tme-demo-copy"><p class="tme-eyebrow">Try the sequence</p><h3 id="demo-title">Review.<br/>Submit.<br/><em>Know.</em></h3><p>This later, interpretive walkthrough illustrates the selected-file and submission-record states; it is not the original Figma interface. It does not upload files or connect to D2L.</p><p class="tme-demo-context">Collaborative academic project.<br/>Proposed benefits remain unvalidated.</p></div>
+ <div class="tme-demo-panel"><div class="tme-demo-top"><span>Assignment 01</span><span data-step>01 / Choose</span></div>
+ <form data-demo novalidate><fieldset data-choose><legend>Choose a sample file</legend><p>Illustrative files, stored only in this walkthrough.</p><label><input type="radio" name="sample" value="Assignment-01.pdf"/><span>Assignment-01.pdf<small>PDF document · Final draft</small></span></label><label><input type="radio" name="sample" value="Assignment-notes.pdf"/><span>Assignment-notes.pdf<small>PDF document · Working notes</small></span></label><button type="submit" class="tme-solid">Review selected file <span aria-hidden="true">→</span></button></fieldset>
+ <div data-review hidden><p class="tme-eyebrow">Ready to submit?</p><h4>Check your selection.</h4><div class="tme-file"><span aria-hidden="true">↗</span><strong data-filename></strong><button type="button" data-remove aria-label="Remove selected sample file">×</button></div><p>You can change the file before confirming.</p><div class="tme-demo-actions"><button type="button" data-change>Change file</button><button type="button" class="tme-solid" data-submit>Submit demo →</button></div></div>
+ <div data-success hidden><span class="tme-success-mark" aria-hidden="true">✓</span><p class="tme-eyebrow">Demo complete</p><h4>Submission recorded.</h4><dl><div><dt>File</dt><dd data-record-file></dd></div><div><dt>Status</dt><dd>Submitted · Simulation</dd></div></dl><p>No real file was uploaded.</p><button type="button" data-reset>Try another selection ↺</button></div>
+ <p class="tme-feedback" data-feedback role="status" aria-live="polite"></p></form></div></section>
+ <section class="tme-evidence" aria-labelledby="evidence-title"><figure><img src={d2l.history.image.src} width={d2l.history.image.width} height={d2l.history.image.height} alt={d2l.history.alt} loading="lazy" decoding="async"/><figcaption>Submission record / Original team artifact · Figma 554:1169 · Illustrative data</figcaption></figure><div><p class="tme-eyebrow">The original design</p><h3 id="evidence-title">A record<br/>you can <em>read.</em></h3><p>The proposed record brings status, filename and submission details into one view.</p><p class="tme-credit">My shared contribution: heuristic evaluation, task mapping, interface exploration and prototyping with the academic team.</p><a href="/work/d2l-redesign/" data-reader="case" data-title="D2L Redesign — Case study">Read the case study ↗</a><a href="https://www.figma.com/proto/piRHnDp4bwoVkKMo1mHSt7/Team--1?page-id=554%3A550&amp;node-id=554-1219&amp;scaling=scale-down&amp;content-scaling=fixed" target="_blank" rel="noopener noreferrer">Open original Figma prototype ↗<span class="sr-only"> (new tab)</span></a></div></section>
+ <div class="tme-exit"><p>Every clear experience<br/>starts with a <em>different perspective.</em></p><a href="#perspective" data-return>Back through the lens <span aria-hidden="true">↗</span></a></div>
+</section>
+<ProjectChapters />
+</main><footer class="tme-footer"><span>Suleyman Koncagul / UX & Product Design</span><a href="/#about">About me ↗</a>{site.resumeHref && <a href={site.resumeHref}>Resume (PDF) ↗</a>}<a href="/">Return to portfolio ↗</a></footer>
+</div>
+<script>import '../../experiments/through-my-eyes-live/experience';import '../../experiments/through-my-eyes-live/chapters';import '../../experiments/through-my-eyes-live/scene-journey';import '../../experiments/through-my-eyes-live/hero-perspectives';</script>
+</BaseLayout>
+
+<script>import '../../experiments/through-my-eyes-live/accessibility';import '../../experiments/through-my-eyes-live/chapter-video';import '../../experiments/through-my-eyes-live/michigan-time';</script>

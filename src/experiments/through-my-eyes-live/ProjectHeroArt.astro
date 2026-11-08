@@ -1,0 +1,22 @@
+---
+import {appleRingAssets as ring} from '../../data/apple-ring-assets';
+import {d2lAssets as d2l} from '../../data/d2l-assets';
+import {communityAssets as community} from '../../data/community-spaces-assets';
+const {project='chapter-ring'}=Astro.props;
+---
+<figure class:list={['tme-curated-art',`tme-art-${project}`]}>
+ {project==='chapter-ring' ? <>
+  <div class="tme-ring-object"><img src={ring.product.image.src} width={ring.product.image.width} height={ring.product.image.height} alt={ring.product.alt} decoding="async"/></div>
+  <div class="tme-companion-object"><p class="tme-art-label">The morning handoff</p><svg viewBox="670 145 340 455" role="img" aria-label="Original proposed Watch companion showing Ring as the source, illustrative sleep estimate, battery and last-sync time"><image href={ring.handoff.image.src} width="1120" height="1119"/></svg></div>
+  <figcaption>Ring at night. A proposed handoff to Watch in the morning. <a href={ring.handoff.image.src} target="_blank" rel="noopener noreferrer">Inspect original interface ↗<span class="sr-only"> (new tab)</span></a><span>Independent concept · AI-generated product still · Illustrative interface</span></figcaption>
+ </> : project==='d2l-world' ? <>
+  <div class="tme-decision-art"><img src={d2l.file.image.src} width={d2l.file.image.width} height={d2l.file.image.height} alt={d2l.file.alt} decoding="async"/></div>
+  <figcaption>Review the filename before Submit. <a href={d2l.file.image.src} target="_blank" rel="noopener noreferrer">Inspect original screen ↗<span class="sr-only"> (new tab)</span></a><span>Original team Figma artifact · Selected-file review</span></figcaption>
+ </> : project==='chapter-community' ? <>
+  <div class="tme-event-art"><svg viewBox="49 97 296 621" role="img" aria-label="Original KIBS event details: study night description, location, time and Sign Up action"><image href={community.details.image.src} width="393" height="852"/></svg><div><p class="tme-art-label">Before joining</p><p>What.<br/>Where.<br/><em>When.</em></p></div></div>
+  <figcaption>Event details before registration. <a href={community.details.image.src} target="_blank" rel="noopener noreferrer">Inspect original screen ↗<span class="sr-only"> (new tab)</span></a><span>Original team Figma artifact · Illustrative event</span></figcaption>
+ </> : <>
+  <img class="tme-align-art" src="/experiments/through-my-eyes-live/previews/align-current-product.png" width="1100" height="780" alt="Current coded ALIGN job-discovery prototype, with fictional listings and candidate preferences" decoding="async"/>
+  <figcaption>Preferences beside listing evidence.<span>Current coded prototype · Fictional data</span></figcaption>
+ </>}
+</figure>

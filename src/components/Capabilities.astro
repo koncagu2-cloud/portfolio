@@ -1,0 +1,97 @@
+---
+import SectionHeading from './SectionHeading.astro';
+const root = import.meta.env.BASE_URL;
+---
+<section id="capabilities" class="section capabilities" aria-labelledby="capabilities-heading">
+  <SectionHeading number="02" title="What I bring to a problem" id="capabilities-heading" note="How the vision becomes visible" />
+  <p class="capabilities-point-of-view">I move from questions to structure, then to working interfaces people can inspect and respond to.</p>
+  <div class="capabilities-grid">
+    <article class="capability-card">
+      <p class="micro">01 / Evaluate</p>
+      <h3>Find where clarity breaks down.</h3>
+      <p>I use evaluation and project research to identify where a workflow loses context—and separate observed evidence from questions still to test.</p>
+      <div class="capability-links">
+        <a href={`${root}work/d2l-redesign/#evaluation`}>D2L evaluation <span aria-hidden="true">↗</span></a>
+        <a href={`${root}work/community-spaces/#research`}>Community research <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="capability-card">
+      <p class="micro">02 / Structure</p>
+      <h3>Make the journey legible.</h3>
+      <p>I connect information architecture, task flows, and interface states so people can see what matters and what their next action means.</p>
+      <div class="capability-links">
+        <a href={`${root}work/d2l-redesign/#experience`}>D2L student journey <span aria-hidden="true">↗</span></a>
+        <a href={`${root}work/community-spaces/#experience`}>Community experience <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="capability-card">
+      <p class="micro">03 / Prototype</p>
+      <h3>Make ideas inspectable.</h3>
+      <p>I turn concepts into responsive prototypes and refine their interactions around accessibility, with keyboard access, reduced motion, and edge states in view.</p>
+      <div class="capability-links">
+        <a href={`${root}work/apple-ring/#implementation`}>Apple Ring implementation <span aria-hidden="true">↗</span></a>
+        <a href={`${root}work/align/#decisions`}>ALIGN design decisions <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+  </div>
+</section>
+<style>
+  .capabilities-point-of-view {
+    max-width: 66ch;
+    margin: 1.25rem 0 2rem 5rem;
+    font: 400 clamp(1.45rem, 2.8vw, 2.25rem)/1.3 var(--font-editorial);
+    letter-spacing: -.025em;
+    text-wrap: balance;
+  }
+  .capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-block: 1px solid var(--rule);
+  }
+  .capability-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    padding: 1.5rem clamp(1rem, 2.4vw, 2rem);
+  }
+  .capability-card + .capability-card { border-left: 1px solid var(--rule); }
+  .capability-card > .micro { margin: 0; color: var(--muted); }
+  .capability-card h3 {
+    max-width: 18ch;
+    margin: 1rem 0 .75rem;
+    font: 400 clamp(1.5rem, 2.1vw, 2rem)/1.2 var(--font-editorial);
+    letter-spacing: -.025em;
+    text-wrap: balance;
+  }
+  .capability-card > p:not(.micro) { margin: 0; color: var(--muted); }
+  .capability-links {
+    display: grid;
+    gap: .25rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
+  }
+  .capability-links a {
+    display: inline-flex;
+    width: fit-content;
+    max-width: 100%;
+    flex-wrap: wrap;
+    min-height: 44px;
+    align-items: center;
+    gap: .5rem;
+    color: var(--ink);
+    overflow-wrap: anywhere;
+    text-underline-offset: .25em;
+  }
+  .capability-links a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+  @media (max-width: 48rem) {
+    .capabilities-point-of-view { margin-left: 2.5rem; }
+    .capabilities-grid { grid-template-columns: minmax(0, 1fr); }
+    .capability-card { padding: 1.25rem 0; }
+    .capability-card + .capability-card { border-left: 0; border-top: 1px solid var(--rule); }
+    .capability-card h3 { max-width: 24ch; }
+  }
+  @media (max-width: 40rem) {
+    .capabilities-point-of-view { margin-left: 0; font-size: 1.45rem; }
+    .capability-links { padding-top: 1rem; }
+  }
+</style>

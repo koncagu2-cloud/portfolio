@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import { imageWidths } from './case-study/imageWidths';
+import { communityAssets as assets } from '../data/community-spaces-assets';
+interface Props { project: CollectionEntry<'projects'> }
+const { project } = Astro.props;
+const href = `${import.meta.env.BASE_URL}work/${project.data.caseStudy!.slug}/`;
+---
+<article class="project-feature community-feature" aria-labelledby="community-feature-heading">
+  <header class="feature-heading"><p class="micro">02 / Place + participation · Team project</p><h3 id="community-feature-heading">{project.data.title}</h3></header>
+  <div class="feature-story"><h4>From finding a space to joining an event.</h4><p>Connect a community-space concept with a digital path from event discovery to registration. Task flows give that journey structure before the interface adds detail.</p><p class="project-boundary">Collaborative academic concept · Event data and availability are illustrative.</p></div>
+  <figure class="project-visual">
+    <a class="feature-artifacts community-feature-artifacts" href={href} aria-label="View the Community Spaces case study">
+      <div class="spatial-artifact"><span class="micro" aria-hidden="true">A shared place</span><Image src={assets.space.image} widths={imageWidths(assets.space.image.width)} sizes="(max-width: 40rem) 92vw, (max-width: 64rem) 45vw, 48vw" format="webp" alt={assets.space.alt} loading="lazy" decoding="async" /></div>
+      <div class="digital-artifact"><span class="micro" aria-hidden="true">A way to take part</span><Image class="primary-artifact" src={assets.events.image} widths={imageWidths(assets.events.image.width)} sizes="(max-width: 40rem) 92vw, (max-width: 64rem) 45vw, 48vw" format="webp" alt={assets.events.alt} loading="lazy" decoding="async" /></div>
+    </a>
+    <figcaption>Connect a proposed place with the path to participation.<span>Original <span class="secondary-caption">spatial sketches and </span>KIBS event-discovery interface.</span></figcaption>
+  </figure>
+  <div class="feature-details feature-footer"><dl class="feature-contribution"><dt>Shared contribution</dt><dd>Research, concept development, interaction design, and presentation.</dd></dl><div class="project-actions"><a class="text-link" href={href}>Read the case study <span aria-hidden="true">↗</span></a><a class="text-link" href="https://www.figma.com/proto/pWjqzjZD2HgayCk6pQg3Zk/Wireframes?page-id=154%3A64&amp;node-id=214-348&amp;starting-point-node-id=214%3A348&amp;scaling=scale-down&amp;content-scaling=fixed" target="_blank" rel="noopener noreferrer" aria-label="Open Community Spaces prototype in Figma (opens in a new tab)">Open Community Spaces prototype in Figma <span aria-hidden="true">↗</span></a></div></div>
+</article>

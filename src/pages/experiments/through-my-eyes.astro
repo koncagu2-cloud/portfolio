@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import portrait from '../../assets/personal/suleyman-portrait.jpg';
+import { d2lAssets as d2l } from '../../data/d2l-assets';
+import { site } from '../../data/site';
+import '../../experiments/through-my-eyes/eyes.css';
+---
+<BaseLayout title="Through My Eyes — Character production study / Suleyman Koncagul" description="An isolated character-to-project interaction study. The character is a non-likeness placeholder, not a finished representation of Suleyman." noindex>
+<div class="eyes-experiment" data-eyes-experience>
+<header class="eyes-nav"><a class="eyes-brand" href="#eyes-intro">SK <span>/ Through My Eyes</span></a><nav aria-label="Experiment navigation"><a href="#eyes-project">View D2L ↘</a><a href="/experiments/through-my-lens/">Glasses study ↗</a><a href="/">Portfolio ↗</a></nav></header>
+<main id="main" tabindex="-1">
+<section class="eyes-journey" id="eyes-intro" aria-labelledby="eyes-headline"><div class="eyes-stage">
+  <div class="eyes-identity"><p class="eyes-name">Suleyman Koncagul<span>UX / Product Designer</span></p><h1 id="eyes-headline">Experience<br/>is a matter of<br/><em>perspective.</em></h1><p class="eyes-support">I turn complex information into clear,<br/>thoughtful, working experiences.</p><a class="eyes-link" href="#eyes-project">Skip introduction <span aria-hidden="true">↓</span></a></div>
+  <figure class="eyes-reference"><Image src={portrait} alt="Original reference portrait of Suleyman Koncagul wearing glasses and a dark shirt" widths={[420,700]} sizes="(max-width: 700px) 75vw, 38vw" format="webp" loading="eager"/><figcaption>Original portrait / reference photograph</figcaption></figure>
+  <canvas class="eyes-canvas" data-character-canvas aria-hidden="true"></canvas>
+  <aside class="eyes-asset-label" aria-label="Character production status"><span class="eyes-kicker">Character production study</span><strong>Non-likeness placeholder.</strong><p>This sculpture tests the interaction.<br/>It is not a finished representation of Suleyman.</p></aside>
+  <div class="eyes-controls" hidden><button type="button" data-character-pause aria-pressed="false">Pause character</button><button type="button" data-eyes-motion aria-pressed="false">Reduce motion</button></div>
+  <div class="eyes-stage-foot"><span class="eyes-kicker">A perspective begins with a person</span><a href="#eyes-project">Enter the work ↓</a></div>
+  <p class="eyes-status" data-character-status role="status">Reference view. All project content is available below.</p>
+</div></section>
+<section class="eyes-project" id="eyes-project" aria-labelledby="eyes-d2l-title" tabindex="-1"><div class="eyes-world-slot"><div class="eyes-world" data-eyes-world>
+ <header><p class="eyes-kicker">01 / Clarity — D2L Redesign</p><h2 id="eyes-d2l-title">Which file<br/>will <em>count?</em></h2><p>Before Submit, make the choice visible.</p></header>
+ <figure class="eyes-selected"><span class="eyes-kicker">Selected-file review / original team artifact</span><div class="eyes-selected-window"><img src={d2l.file.image.src} width={d2l.file.image.width} height={d2l.file.image.height} alt={d2l.file.alt} decoding="async"/></div><figcaption>Figma 554:1377 · Dialog excerpt on narrow screens. <a href={d2l.file.image.src}>Open complete artifact ↗</a></figcaption></figure>
+</div></div><div class="eyes-decision"><span class="eyes-kicker">The decision</span><p>Keep the chosen filename visible. Separate reviewing that choice from recording a submission.</p></div>
+<div class="eyes-record"><div><p class="eyes-kicker">A separate state</p><h3>What was<br/><em>submitted?</em></h3><p>Submitted status, filename and an illustrative date make up the proposed record.</p></div><figure><div class="eyes-record-window"><img src={d2l.history.image.src} width={d2l.history.image.width} height={d2l.history.image.height} alt="Original D2L submission-record excerpt showing Submitted status, filename and illustrative date" loading="lazy" decoding="async"/></div><figcaption>Original team artifact · Figma 554:1169 · Illustrative data <a href={d2l.history.image.src}>Open full-size submission record ↗</a></figcaption></figure></div>
+<div class="eyes-contribution"><div><p class="eyes-kicker">My shared contribution</p><p>Heuristic evaluation, task mapping, interface exploration and prototyping with the academic project team.</p><small>Proposed interface states. Usability improvements remain unvalidated.</small></div><div class="eyes-actions"><a class="eyes-link" href="/work/d2l-redesign/">Read the D2L case study ↗</a><a class="eyes-link" href="https://www.figma.com/proto/piRHnDp4bwoVkKMo1mHSt7/Team--1?page-id=554%3A550&amp;node-id=554-1219&amp;scaling=scale-down&amp;content-scaling=fixed" target="_blank" rel="noopener noreferrer">Open D2L prototype (new tab) ↗</a></div></div></section>
+<section class="eyes-next" aria-labelledby="eyes-next-title"><p class="eyes-kicker">Other perspectives / existing case studies</p><h2 id="eyes-next-title">The work is<br/><em>the evidence.</em></h2><nav aria-label="Other project case studies"><a href="/work/apple-ring/"><span>02 / Continuity</span>Apple Ring ↗<small>Independent speculative concept</small></a><a href="/work/community-spaces/"><span>03 / Connection</span>Community Spaces ↗<small>Collaborative academic project</small></a><a href="/work/align/"><span>04 / Judgment</span>ALIGN ↗<small>Independent prototype · Fictional data</small></a></nav><p>These remain direct case links. Their character-driven environments have not been built.</p></section>
+<section class="eyes-contact" aria-labelledby="eyes-contact-title"><p class="eyes-kicker">The designer behind the work</p><h2 id="eyes-contact-title">Let’s build something<br/><em>thoughtful together.</em></h2><nav aria-label="Contact Suleyman"><a href={`mailto:${site.email}`}>Email ↗</a><a href={site.linkedIn!}>LinkedIn ↗</a><a href={site.resumeHref!}>Resume (PDF) ↓</a></nav></section>
+</main><footer class="eyes-footer"><span>Through My Eyes / Isolated production study</span><a href="/experiments/through-my-lens/">Return to Phase 3 glasses ↗</a><a href="#eyes-intro">Back to introduction ↑</a></footer>
+</div>
+<script>import '../../experiments/through-my-eyes/eyes';</script>
+</BaseLayout>

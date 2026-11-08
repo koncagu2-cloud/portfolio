@@ -1,0 +1,122 @@
+{
+  "source": "Owner-retained buildless Apple Ring concept",
+  "route": "/prototypes/apple-ring/",
+  "changes": [
+    "Portfolio return navigation",
+    "Review-only noindex metadata",
+    "Portfolio result-visibility support module (public/prototype-support/apple-ring.js)",
+    "Canonical/share metadata and local portfolio favicon"
+  ],
+  "files": [
+    {
+      "file": "assets/apple.svg",
+      "bytes": 757,
+      "sha256": "802accae47ba25443760bc95496711fc371493cf563f6050863cd753dc3d89a5"
+    },
+    {
+      "file": "assets/ring-charging-v2.webp",
+      "bytes": 49514,
+      "sha256": "f55511a6eb6f090c188f4b3683aec8dbf856ff12993a8fa7706bc88346eabef1"
+    },
+    {
+      "file": "assets/ring-charging.webp",
+      "bytes": 61580,
+      "sha256": "2d3e17eb015fbb062e55f19098807856cce057f38aed291050f4c55ccb27f21f"
+    },
+    {
+      "file": "assets/ring-ecosystem-v2.webp",
+      "bytes": 77466,
+      "sha256": "42efa2ee96d9df27b3969353465cc26dacafb41bd2cbc08b417facbbbc4ce063"
+    },
+    {
+      "file": "assets/ring-finishes.webp",
+      "bytes": 84578,
+      "sha256": "af21fd105d8f4988e947672881908b12d9126384833a52b3aff002d3e1f0e0cd"
+    },
+    {
+      "file": "assets/ring-graphite-v2.webp",
+      "bytes": 158776,
+      "sha256": "d90af0f757b4dae374e8db9715d7f19ffeffa7d3dfa3279e9ac33bb9e6b3f151"
+    },
+    {
+      "file": "assets/ring-hero.webp",
+      "bytes": 116824,
+      "sha256": "478241c41a2dcfbe51a304bdf2705ab0e3e7266c2347fea826d261f7e8c9d551"
+    },
+    {
+      "file": "experience-state.js",
+      "bytes": 2141,
+      "sha256": "74ecce8a2ab004157ec79fc35375ffe729bc1bacb885977a0fe5d8c290fe6fb0"
+    },
+    {
+      "file": "index.html",
+      "bytes": 34861,
+      "sha256": "e6371176227bf6e0de3460bf5cbc0947dc00f65d43a55f601eb3a2ab8560adcb"
+    },
+    {
+      "file": "palette.css",
+      "bytes": 17283,
+      "sha256": "088a57943aecfc5bd4bb966b509667af58107e8aad5b87080d798d8195532a52"
+    },
+    {
+      "file": "polish.css",
+      "bytes": 5257,
+      "sha256": "e515d63b944cc9d60032cbf893d0f3563c1254a78b91854f9d34e1fcdc56ca9d"
+    },
+    {
+      "file": "refinements.css",
+      "bytes": 14778,
+      "sha256": "ab720bfdf9706dac88682139bca25ae290212a9ab641018a076b68147e8640e3"
+    },
+    {
+      "file": "ring-model.js",
+      "bytes": 7397,
+      "sha256": "5705a3712794718a59c680cd10d01bc004e62e0bae7133a68aafd5ba91e7f8a7"
+    },
+    {
+      "file": "script.js",
+      "bytes": 9383,
+      "sha256": "f124de4e3d17bafebd1b9a1086aa34564e0699c835730c8e5d1d8e5574af4d39"
+    },
+    {
+      "file": "style.css",
+      "bytes": 16470,
+      "sha256": "fc9e7b65107610dec73b84059926580daf92027558bcbaa6bcb2271f2e77b728"
+    },
+    {
+      "file": "try-ring.css",
+      "bytes": 14079,
+      "sha256": "35a65cdbbba73b247540be57257318004c36fbb446ce371209cf577aaf0aa90c"
+    },
+    {
+      "file": "try-ring.js",
+      "bytes": 13865,
+      "sha256": "d84b33218624552b5104cf70a9bc5a54f19da90e2f0a8d05e749046c960af824"
+    },
+    {
+      "file": "vendor/RoomEnvironment.js",
+      "bytes": 4911,
+      "sha256": "faf5469bea1b9961e4b82d1da6a1671ec16137b6cc5b482a6d75a64a05bdc903"
+    },
+    {
+      "file": "vendor/three-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "file": "vendor/three.core.js",
+      "bytes": 1403455,
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+    },
+    {
+      "file": "vendor/three.module.js",
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    {
+      "file": "watch-handoff.js",
+      "bytes": 5643,
+      "sha256": "89ca9bbb6faa2072a30a34d9985e2fca17263f78c276e320880cce8f0fa6ac00"
+    }
+  ]
+}

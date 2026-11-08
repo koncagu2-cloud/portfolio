@@ -1,0 +1,29 @@
+---
+import {appleRingAssets as ring} from '../../data/apple-ring-assets';
+const recording='/experiments/through-my-eyes-live/videos/ring-scroll-preview.mp4';
+---
+<figure class="tme-ring-recording" data-video-player data-chapter-video="chapter-ring">
+ <div class="tme-chapter-video-image">
+  <img src={ring.product.image.src} width="1280" height="720" alt={ring.product.alt} loading="lazy" decoding="async"/>
+  <video hidden loop playsinline muted preload="none" data-auto-preview data-video-src={recording} data-project-name="Apple Ring chapter" poster={ring.product.image.src} id="ring-chapter-recording" aria-label="Apple Ring independent concept website recording" aria-describedby="ring-chapter-recording-description" />
+ </div>
+ <div class="tme-video-toolbar">
+  <button type="button" data-video-play aria-controls="ring-chapter-recording" aria-pressed="false">Play prototype preview</button>
+  <span>0:14 · Silent</span>
+  <a href={recording} target="_blank" rel="noopener noreferrer">View larger recording ↗<span class="sr-only"> (new tab)</span></a>
+ </div>
+ <figcaption>Independent concept · Coded prototype recording
+  <details class="tme-video-description"><summary>Recording description</summary><p id="ring-chapter-recording-description">A brief scroll through the speculative Apple Ring product website. Product imagery and proposed device behavior are concept explorations, not real hardware integration or an official Apple product.</p></details>
+  <p class="tme-video-status" data-video-status role="status" aria-live="polite"></p>
+ </figcaption>
+</figure>
+<style is:global>
+.tme[data-cinematic=true] .tme-ring-opening>.tme-ring-recording{transform:none;transition:none;background:transparent}
+.tme .tme-ring-recording .tme-chapter-video-image{position:relative;aspect-ratio:16/9;background:#080808;overflow:hidden}
+.tme[data-cinematic=true] .tme-ring-opening>.tme-ring-recording .tme-chapter-video-image>img{display:block;width:100%;height:100%;max-height:none;object-fit:contain}
+.tme .tme-ring-recording .tme-chapter-video-image>video{background:#080808}
+.tme .tme-ring-recording :is(.tme-video-toolbar button,.tme-video-toolbar a,.tme-video-toolbar>span,.tme-video-description,.tme-video-status){color:#dfd5ec}
+.tme .tme-ring-recording .tme-video-toolbar :is(button,a){border-color:#a58cbd}
+.tme .tme-ring-recording .tme-video-description p{font-size:1rem;line-height:1.65}
+.tme .tme-ring-recording figcaption{margin-top:12px}
+</style>

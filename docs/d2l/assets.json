@@ -1,0 +1,128 @@
+{
+  "reviewDate": "2026-10-16",
+  "creator": "Suleyman Koncagul, Gabe Bustillo, Benji Fajardo, and Alana Alexander",
+  "usage": "Owner-authorized review implementation; third-party embedded imagery/icon rights pending before public launch",
+  "assets": {
+    "src/assets/d2l/student-home.webp": {
+      "sha256": "a38d1bfabd5f0d68c4b8e6a496cb1759c7110baa14993e186571f349a73b7425",
+      "source": {
+        "fileKey": "piRHnDp4bwoVkKMo1mHSt7",
+        "nodeId": "554:1219",
+        "exportSha256": "30b0f4c92d397b8f36a1c8b4e18a991e1786c25af57dc25bb9b2d7d3b4d40f22",
+        "width": 1440,
+        "height": 1024,
+        "treatment": "Native-size original Figma render, WebP quality 90 web compression. No cropping, redrawing, rearrangement, or recoloring; source PNG hash retained."
+      }
+    },
+    "src/assets/d2l/assignment-final.webp": {
+      "sha256": "3a57dfa615f7bcf322ded51ed620978a31c1a50ad14c426f491cd83eb26680a4",
+      "source": {
+        "fileKey": "piRHnDp4bwoVkKMo1mHSt7",
+        "nodeId": "554:1123",
+        "exportSha256": "77501d298a799a9ca078e1217318ba1b302c6f0333b45011cc0fc5ed489eafe0",
+        "width": 1440,
+        "height": 1435,
+        "treatment": "Native-size original Figma render, lossless WebP encoding; decoded pixels verified identical. No cropping, redrawing, or recoloring."
+      }
+    },
+    "src/assets/d2l/file-review.webp": {
+      "sha256": "a268945aba54b3a113de1d19252d8bb8c0fff573b6bf6e0286eb23ccb026de43",
+      "source": {
+        "fileKey": "piRHnDp4bwoVkKMo1mHSt7",
+        "nodeId": "554:1377",
+        "exportSha256": "7d10925b6defccfa6395b275b043ab8600c449e32cfdb764c8cc6707cfa12ef7",
+        "width": 1440,
+        "height": 1024,
+        "treatment": "Native-size original Figma render, lossless WebP encoding; decoded pixels verified identical. No cropping, redrawing, or recoloring."
+      }
+    },
+    "src/assets/d2l/submission-history.webp": {
+      "sha256": "b89f658112e594bd6bff35c4e02bb5422ed8daac7319c696a6cf4211fb9f480a",
+      "source": {
+        "fileKey": "piRHnDp4bwoVkKMo1mHSt7",
+        "nodeId": "554:1169",
+        "exportSha256": "cca36bfb5502cffd6cf81f5c1eed6b8226c64588756de68dd927152293656ff5",
+        "width": 1440,
+        "height": 1631,
+        "treatment": "Native-size original Figma render, lossless WebP encoding; decoded pixels verified identical. No cropping, redrawing, or recoloring."
+      }
+    },
+    "src/assets/d2l/instructor-overview.webp": {
+      "sha256": "54702a75fc860627b15058be51899e6478ce7a6a195aab0c7a3ce6e431fd971c",
+      "source": {
+        "fileKey": "piRHnDp4bwoVkKMo1mHSt7",
+        "nodeId": "274:414",
+        "exportSha256": "955d08b9d8b028fef884fc4399e3223d8fa96259fc45f38ec6433a7550528a62",
+        "width": 1440,
+        "height": 1024,
+        "treatment": "Native-size original Figma render, lossless WebP encoding; decoded pixels verified identical. No cropping, redrawing, or recoloring."
+      }
+    },
+    "src/assets/d2l/rubric-maker.webp": {
+      "sha256": "563dfd1b88236429ac5ec6a351b30b9e1e7e5e3aab3ca7a45aa0663d9011abde",
+      "source": {
+        "fileKey": "piRHnDp4bwoVkKMo1mHSt7",
+        "nodeId": "286:415",
+        "exportSha256": "64a545462496a86b95bf8089a8bdcab06db31d72d635649b0d5a6f2191e8db03",
+        "width": 1440,
+        "height": 1024,
+        "treatment": "Native-size original Figma render, lossless WebP encoding; decoded pixels verified identical. No cropping, redrawing, or recoloring."
+      }
+    },
+    "src/assets/d2l/student-flow.webp": {
+      "sha256": "caa9df6504481d3e9afb930efc57c88b35efa4b27c72c8c191f198a2ea97d041",
+      "source": {
+        "fileKey": "piRHnDp4bwoVkKMo1mHSt7",
+        "nodeId": "123:4",
+        "exportSha256": "5457f622785877506bf7caac7f5bfffa4623f046095898728b813605369e728e",
+        "width": 1024,
+        "height": 768,
+        "treatment": "Native-size original Figma render, lossless WebP encoding; decoded pixels verified identical. No cropping, redrawing, or recoloring."
+      }
+    },
+    "src/assets/d2l/instructor-flow.webp": {
+      "sha256": "03a4a17bed841e89e2d43f4f63d471e93709b480d963dfaf947cd544aed4e565",
+      "source": {
+        "fileKey": "piRHnDp4bwoVkKMo1mHSt7",
+        "nodeId": "123:3",
+        "exportSha256": "fc5b0b8fc52951f101f792a8a02b793b38b9788a0de0836bc31e4edf5b3357ea",
+        "width": 1024,
+        "height": 768,
+        "treatment": "Native-size original Figma render, lossless WebP encoding; decoded pixels verified identical. No cropping, redrawing, or recoloring."
+      }
+    },
+    "src/assets/d2l/student-sketch.webp": {
+      "sha256": "0151d319dfe6f7ab63efe61204525787a2915b0b1cb543df8940a2e477fe60d4",
+      "source": {
+        "fileKey": "piRHnDp4bwoVkKMo1mHSt7",
+        "nodeId": "160:4",
+        "exportSha256": "dd2614085aeebbc592d0f35c8f0a24a05150e1bb0ee7a8d029f2d05ee4a4f088",
+        "width": 909,
+        "height": 1302,
+        "treatment": "Native-size original Figma render, lossless WebP encoding; decoded pixels verified identical. No cropping, redrawing, or recoloring."
+      }
+    },
+    "src/assets/d2l/instructor-sketch.webp": {
+      "sha256": "c7655985584ff732e936d20be04add8a53c678966a49e6afca24dbc6c88d859f",
+      "source": {
+        "fileKey": "piRHnDp4bwoVkKMo1mHSt7",
+        "nodeId": "161:2",
+        "exportSha256": "b311adba6b80ab2bd73d9a715fedb4951054ada0cc528d34e42bf14498d3ab91",
+        "width": 1355,
+        "height": 1016,
+        "treatment": "Native-size original Figma render, WebP quality 90 web compression. No cropping, redrawing, rearrangement, or recoloring; source PNG hash retained."
+      }
+    },
+    "src/assets/d2l/assignment-earlier.webp": {
+      "sha256": "e12dc5549b2af60510d01acdb895984dd97d4158dcde832b5f46664e5ce90db9",
+      "source": {
+        "fileKey": "piRHnDp4bwoVkKMo1mHSt7",
+        "nodeId": "481:1306",
+        "exportSha256": "000e00cb3f68c051b0addb4bd34444f09a9bed96a1976827268c4e79c32502cd",
+        "width": 1440,
+        "height": 1435,
+        "treatment": "Native-size original Figma render, lossless WebP encoding; decoded pixels verified identical. No cropping, redrawing, or recoloring."
+      }
+    }
+  }
+}

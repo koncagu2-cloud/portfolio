@@ -1,0 +1,13 @@
+---
+import { communityAssets } from '../../data/community-spaces-assets';
+const screens = [
+  { asset: communityAssets.home, label: '01 / Discover', position: 'discover' },
+  { asset: communityAssets.events, label: '02 / Explore', position: 'explore' },
+  { asset: communityAssets.confirmation, label: '03 / Join', position: 'join' },
+];
+---
+<figure class="hero-showcase" aria-labelledby="showcase-caption">
+  <div class="showcase-heading"><span class="showcase-wordmark">KIBS</span><span class="micro">A digital companion<br />for a shared community space</span></div>
+  <div class="showcase-screens">{screens.map(({ asset, label, position }) => <div class:list={['showcase-screen', `showcase-${position}`]}><span class="micro">{label}</span><img src={asset.image.src} width={asset.image.width} height={asset.image.height} alt={asset.alt} loading="eager" decoding="async" /></div>)}</div>
+  <figcaption id="showcase-caption"><span>Discover an event. Explore the details. Find a way to take part.</span><span class="showcase-source">Original team-designed Figma screens · Concept prototype</span></figcaption>
+</figure>

@@ -1,0 +1,39 @@
+/* Readability and type hierarchy within the editorial homepage only. */
+.homepage{--home-reading:1.125rem;--home-secondary:1rem}
+.homepage .hero h1{letter-spacing:-.045em;line-height:1.1}
+.homepage .hero-bottom p,.homepage .project-feature .feature-story>p,
+.homepage .project-feature .feature-contribution dd{font-size:var(--home-reading);line-height:1.7}
+.homepage .project-feature .feature-story>.project-boundary{font-size:var(--home-secondary);line-height:1.65}
+.homepage .project-feature .feature-story h4{line-height:1.2;letter-spacing:-.025em;overflow-wrap:anywhere}
+.homepage :is(.micro,.strip-inner,.site-footer),
+.homepage .project-feature .feature-heading>.micro,
+.homepage .project-feature .project-visual figcaption,
+.homepage .project-feature .feature-contribution dt,
+.homepage .project-feature :is(.feature-artifacts,.ring-feature-artifacts,.community-feature-artifacts) .micro{font-size:var(--home-secondary);line-height:1.6;letter-spacing:.015em}
+.homepage .project-visual figcaption>span{color:var(--muted)}
+.homepage :is(.site-header nav a,.theme-toggle,.text-link,.project-actions .text-link,summary){font-size:var(--home-secondary);line-height:1.5;min-height:44px}
+.homepage #about :is(.about-introduction>p,.capability-list dd,.site-implementation p),
+.homepage .contact-bottom>p{font-size:var(--home-reading);line-height:1.75;max-width:65ch}
+.homepage #about .about-introduction>.about-lead{font-size:1.25rem;line-height:1.65}
+.homepage #about :is(.capability-list dt,.resume-note p,.portrait-instruction){font-size:var(--home-secondary);line-height:1.65}
+.homepage .site-footer{gap:1rem 2rem;flex-wrap:wrap}
+.homepage .strip-inner{flex-wrap:wrap;gap:.5rem 1.5rem}
+.homepage :is(p,dd,figcaption){text-wrap:pretty}
+.homepage :is(a,button,summary):focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+@media(max-width:40rem){
+ .homepage .hero-identity>.micro{font-size:var(--home-secondary)}
+ .homepage .hero h1{font-size:clamp(2.25rem,10vw,2.75rem)}
+ .homepage .hero-bottom{gap:.75rem}
+ .homepage .hero .hero-bottom p{font-size:1rem}
+ .homepage .project-feature .project-visual figcaption{font-size:var(--home-secondary)}
+ .homepage .project-feature .feature-footer{gap:1.5rem}
+ .homepage .site-header nav{flex-wrap:wrap}
+}
+@media print{.homepage [data-home-reveal]{transform:none!important;opacity:1!important}}
+.homepage .site-header .wordmark{font-size:1rem;line-height:1.2}
+.homepage #about .personal-portrait figcaption{font-size:var(--home-secondary);line-height:1.65}
+@media(max-width:40rem){
+ .homepage .strip-inner{gap:.15rem;padding-block:.5rem}
+ .homepage .site-header{padding-block:.5rem;row-gap:0}
+ .homepage .hero{padding-block:.5rem 1rem;gap:.5rem}
+}

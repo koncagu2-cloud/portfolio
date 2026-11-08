@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../assets/personal/suleyman-portrait.jpg';
+---
+<personal-portrait>
+  <figure class="personal-portrait">
+    <button type="button" class="portrait-play" aria-label="Keep crown visible on Suleyman’s portrait" aria-pressed="false" aria-describedby="portrait-hint" disabled>
+      <Image src={portrait} alt="Suleyman Koncagul wearing glasses and a dark shirt" widths={[280, 420, 560, 680]} sizes="(max-width: 640px) 280px, 360px" format="webp" loading="lazy" decoding="async" />
+      <svg class="portrait-crown" viewBox="0 0 200 56" fill="none" aria-hidden="true" focusable="false">
+        <defs><linearGradient id="portrait-crown-color" x1="0" y1="28" x2="200" y2="28" gradientUnits="userSpaceOnUse"><stop stop-color="#4c1d95"/><stop offset=".3" stop-color="#7c3aed"/><stop offset=".62" stop-color="#38bdf8"/><stop offset="1" stop-color="#5b21b6"/></linearGradient></defs>
+        <ellipse cx="100" cy="49" rx="88" ry="3.5" fill="#000" opacity=".22"/>
+        <path fill="url(#portrait-crown-color)" stroke="#ddd7f4" stroke-width=".5" d="M0 48V34L8 32L20 9L32 32L44 16L54 32L68 7L80 32L92 18L100 4L108 18L120 32L132 7L144 32L156 16L166 32L180 9L192 32L200 34V48Z"/>
+        <circle cx="20" cy="22" r="2.2" fill="#38bdf8"/><circle cx="68" cy="18" r="2" fill="#c4b5fd"/><circle cx="100" cy="10" r="2.8" fill="#eef2ff"/><circle cx="132" cy="18" r="2" fill="#c4b5fd"/><circle cx="180" cy="22" r="2.2" fill="#38bdf8"/>
+      </svg>
+    </button>
+    <figcaption><span id="portrait-hint" class="portrait-instruction" hidden>Click or tap to pin the crown.</span><span class="portrait-static">Suleyman Koncagul</span></figcaption>
+  </figure>
+</personal-portrait>
+<script>
+  class PersonalPortrait extends HTMLElement {
+    private controller?: AbortController;
+    connectedCallback() {
+      this.controller?.abort();
+      this.controller = new AbortController();
+      const button = this.querySelector<HTMLButtonElement>('.portrait-play');
+      if (!button) return;
+      button.disabled = false;
+      this.querySelector<HTMLElement>('.portrait-instruction')!.hidden = false;
+      this.querySelector<HTMLElement>('.portrait-static')!.hidden = true;
+      const hint = this.querySelector<HTMLElement>('.portrait-instruction')!;
+      const setPinned = (pinned: boolean) => {
+        button.setAttribute('aria-pressed', String(pinned));
+        button.removeAttribute('data-preview');
+        hint.textContent = pinned ? 'Crown pinned. Click or tap to unpin.' : 'Click or tap to pin the crown.';
+      };
+      button.addEventListener('pointerenter', event => {
+        if (event.pointerType === 'mouse' && matchMedia('(hover: hover) and (pointer: fine)').matches) button.setAttribute('data-preview', '');
+      }, { signal: this.controller.signal });
+      button.addEventListener('pointerleave', () => button.removeAttribute('data-preview'), { signal: this.controller.signal });
+      button.addEventListener('focus', () => {
+        if (button.matches(':focus-visible')) button.setAttribute('data-preview', '');
+      }, { signal: this.controller.signal });
+      button.addEventListener('blur', () => button.removeAttribute('data-preview'), { signal: this.controller.signal });
+      button.addEventListener('click', () => setPinned(button.getAttribute('aria-pressed') !== 'true'), { signal: this.controller.signal });
+      button.addEventListener('keydown', event => {
+        if (event.key === 'Escape') setPinned(false);
+      }, { signal: this.controller.signal });
+    }
+    disconnectedCallback() { this.controller?.abort(); }
+  }
+  if (!customElements.get('personal-portrait')) customElements.define('personal-portrait', PersonalPortrait);
+</script>
+<style>
+  personal-portrait { display: block; max-width: 360px; }
+  .personal-portrait { margin: 0; }
+  .portrait-play { display: block; position: relative; padding: 0; border: 0; background: #111522; width: 100%; cursor: pointer; border-radius: .75rem; isolation: isolate; overflow: hidden; }
+  .portrait-play:disabled { cursor: default; opacity: 1; }
+  .portrait-play img { display: block; width: 100%; height: auto; }
+  .portrait-play:focus-visible { outline: 3px solid var(--ink); outline-offset: 6px; }
+  .portrait-crown { position: absolute; left: 6%; top: 3%; width: 88%; height: auto; opacity: 0; transform: translateY(8px) scale(.96); transition: opacity 180ms ease-out, transform 220ms ease-out; pointer-events: none; }
+  .portrait-play[aria-pressed='true'] .portrait-crown,.portrait-play[data-preview] .portrait-crown { opacity: 1; transform: none; }
+  figcaption { font-size: .75rem; color: var(--muted); line-height: 1.6; padding-top: .75rem; }
+  @media(max-width:40rem) { personal-portrait { max-width: 280px; } }
+  @media(prefers-reduced-motion:reduce) { .portrait-crown { transition: none; transform: none; } }
+  @media(forced-colors:active) { .portrait-play { border: 1px solid CanvasText; } }
+</style>

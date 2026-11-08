@@ -1,0 +1,17 @@
+<button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" hidden>
+  Dark mode <span aria-hidden="true" class="theme-indicator"></span>
+</button>
+<script>
+  const button = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+  if (button) {
+    button.hidden = false;
+    button.setAttribute('aria-pressed', String(document.documentElement.dataset.theme === 'dark'));
+    button.addEventListener('click', () => {
+      const dark = document.documentElement.dataset.theme !== 'dark';
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      button.setAttribute('aria-pressed', String(dark));
+      try { localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light'); }
+      catch { /* Toggle still works for this page when storage is blocked. */ }
+    });
+  }
+</script>

@@ -1,0 +1,94 @@
+/* Open scanner is a second composition of the hero, not a floating panel. */
+.tme-hero-perspectives{position:relative;z-index:8;color:#eee9f2;text-align:left;display:grid;grid-template-columns:minmax(0,1fr);gap:22px;padding:0;background:transparent}
+.tme[data-scanner-ready=true] .tme-hero-perspectives{position:absolute;right:5%;top:4%;bottom:4%;width:44%;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#826b95 transparent;transform-origin:0 42%;align-content:start;padding:0 12px 12px 0}
+.tme-hero-perspectives[hidden]{display:none!important}
+.tme-scanner-heading{display:flex;justify-content:space-between;align-items:center;gap:18px;border-bottom:1px solid #786587;padding-bottom:16px}
+.tme .tme-scanner-heading p,.tme-scanner-label{font:12px/1.5 var(--font-meta);color:#c9b5dc;letter-spacing:.035em;margin:0 0 7px}
+.tme .tme-scanner-heading h2{font:20px/1.2 var(--font-ui);letter-spacing:-.035em;margin:0;font-weight:400}
+.tme-scanner-heading button{font:14px/1.5 var(--font-ui);color:#e2d3ef;background:none;border:0;min-height:44px;padding:8px;cursor:pointer}
+.tme-hero-perspectives nav>.tme-scanner-label{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden}
+.tme-hero-perspectives ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.tme-hero-perspectives nav button{display:grid;grid-template-columns:1fr;align-content:start;gap:4px;width:100%;min-height:76px;padding:6px 0 11px;border:0;border-bottom:2px solid #54475e;background:transparent;color:#bfb3ca;text-align:left}
+.tme-hero-perspectives nav button[data-selected=true]{border-bottom-color:#d7b7f2;color:#fff0ff}
+.tme-hero-perspectives nav button:hover{border-bottom-color:#c3a0dc;color:#fff0ff}
+.tme-hero-perspectives nav strong{font:15px/1.25 var(--font-ui);font-weight:500;letter-spacing:-.025em}
+.tme-hero-perspectives nav small{font:12px/1.4 var(--font-ui);color:#c4b6cf}
+.tme-hp-number,.tme-hp-arrow{display:none}
+.tme-hero-perspectives :is(a,button):focus-visible{outline:2px solid #dfc5f3;outline-offset:3px}
+.tme-hp-preview{position:relative;min-width:0}.tme-hp-preview [hidden]{display:none}
+.tme-scanner-project{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
+.tme-scanner-project .tme-scanner-label{margin:0}
+.tme .tme-scanner-project h3{font:clamp(36px,4.2vw,66px)/1.02 var(--font-ui);letter-spacing:-.055em;margin:0;font-weight:400;text-wrap:balance}
+.tme-hp-preview figure{margin:0}.tme-scanner-image{position:relative;height:clamp(240px,32vh,370px);overflow:hidden;display:flex;align-items:center;justify-content:center;background:#141319}
+.tme-scanner-image>img{display:block;width:100%;height:100%;object-fit:contain}
+[data-hero-preview=d2l-world] .tme-scanner-image{background:#d9e1d6}
+[data-hero-preview=chapter-align] .tme-scanner-image{background:#f6f5ee}
+[data-hero-preview=chapter-ring] .tme-scanner-image{background:#050506;height:clamp(270px,35vh,390px)}
+.tme-scanner-image-pair{display:grid;grid-template-columns:1.35fr .7fr;gap:20px;background:#e6e1e9;padding:22px}
+.tme-scanner-image-pair>svg{width:100%;height:100%;display:block}.tme-scanner-image-pair>img{width:100%;height:100%;min-height:0;object-fit:contain}
+.tme-scanner-image>.tme-scan-outgoing{position:absolute;inset:0;height:100%;width:100%;margin:0;z-index:2;pointer-events:none}
+.tme-hp-preview figcaption{font:12px/1.5 var(--font-ui);color:#c4b6cf;margin-top:10px}
+.tme .tme-scanner-challenge{font:clamp(19px,1.65vw,26px)/1.4 var(--font-ui);margin:20px 0 14px;letter-spacing:-.025em;text-wrap:pretty}
+.tme .tme-scanner-contribution{font:14px/1.65 var(--font-ui);color:#cfc5d7;margin:0;max-width:64ch}.tme-scanner-contribution strong{display:block;font-weight:500;color:#f1eaf6;margin-bottom:3px}
+.tme-scanner-actions{display:flex;flex-wrap:wrap;gap:7px 28px;margin-top:20px}.tme-scanner-actions a{display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:48px;font-size:16px;border-bottom:1px solid #ac8dc2;color:#eee0f8}.tme-scanner-actions .tme-scanner-direct{border:0;font-size:12px;color:#c4b6cf;min-height:44px}
+.tme-scanner-status{font:14px/1.5 var(--font-ui);color:#dfc4f4}.tme-scanner-status:empty{display:none}
+.tme .tme-scanner-launch{display:flex;align-items:center;justify-content:space-between;gap:60px;width:fit-content;font:18px/1.5 var(--font-ui);color:#eee9f2;background:none;border:0;border-bottom:1px solid #bca2d2;padding:10px 0;min-height:44px;margin-top:23px;cursor:pointer;pointer-events:auto;position:relative;z-index:4}
+.tme .tme-scanner-launch:hover{color:#d3b5ed}
+html[data-tme-entrance=pending] .tme:not([data-opening=entering]) .tme-hero-perspectives{visibility:hidden}
+[data-cinematic=true][data-scene=through-lens] .tme-hero-perspectives{visibility:hidden;pointer-events:none}
+.tme .tme-glasses-target{border:0!important;outline:0!important;background:transparent;clip-path:var(--lens-hit);border-radius:0;padding:0}
+.tme .tme-glasses-target:before{content:'';position:absolute;inset:0;background:#d7b3ee;opacity:0;transition:opacity 180ms}
+.tme .tme-glasses-target:is(:hover,:focus-visible):before,.tme[data-scanner=preview] .tme-glasses-target:before,.tme[data-scanner=pinned] .tme-glasses-target:before{opacity:.14}
+.tme .tme-glasses-target:focus-visible:before{opacity:.3}.tme .tme-glasses-target span{display:none}
+.tme[data-scanner-ready=true] .tme-type{transition:opacity 180ms ease,transform 380ms cubic-bezier(.2,.7,.2,1)}
+.tme:is([data-scanner=preview],[data-scanner=pinned],[data-scanner=entering]) .tme-type{opacity:0;transform:translate3d(0,-26px,0);pointer-events:none}
+.tme:is([data-scanner=preview],[data-scanner=pinned],[data-scanner=entering]) .tme-type *{pointer-events:none!important}
+@media(min-width:701px){.tme:is([data-scanner=preview],[data-scanner=pinned],[data-scanner=entering],[data-scanner-reframed=true]):not([data-lens-active=true]) .tme-character{clip-path:inset(0 1% 19% 0);mask-image:linear-gradient(to bottom,#000 0 67%,transparent 79%)}}
+@media(min-width:701px) and (max-width:1100px){
+ .tme[data-scanner-ready=true] .tme-hero-perspectives{right:4%;width:48%;gap:18px;top:4%;bottom:4%}
+ .tme-hero-perspectives ol{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}.tme-hero-perspectives nav button{min-height:58px;padding:6px 0}
+ .tme .tme-scanner-project h3{font-size:42px}.tme-scanner-image{height:260px}.tme .tme-scanner-challenge{font-size:20px}
+}
+@media(max-width:700px){
+ .tme[data-scanner-ready=true] .tme-hero-perspectives{position:absolute;top:var(--scanner-top-offset,76px);left:0;right:0;bottom:0;width:auto;max-height:none;gap:20px;padding:22px 6% 30px;z-index:25;align-content:start;background:#1d1a24}
+ .tme-scanner-heading{padding-bottom:14px}.tme .tme-scanner-heading h2{font-size:20px}.tme .tme-scanner-heading p{font-size:12px;max-width:22ch}
+ .tme-hero-perspectives ol{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 18px}.tme-hero-perspectives nav button{min-height:61px;padding:6px 0}.tme-hero-perspectives nav strong{font-size:15px}
+ .tme .tme-scanner-project h3{font-size:40px}.tme-scanner-project{margin-bottom:18px}
+ .tme-scanner-image{height:250px}[data-hero-preview=chapter-ring] .tme-scanner-image{height:280px}
+ .tme-scanner-image-pair{height:250px;padding:14px;gap:12px;grid-template-columns:1.15fr .75fr}
+ .tme .tme-scanner-challenge{font-size:21px;margin-top:18px}.tme .tme-scanner-contribution{font-size:14px}
+ .tme-scanner-actions{gap:8px 22px}.tme-scanner-actions a{font-size:15px;min-height:48px}.tme .tme-scanner-launch{font-size:17px;margin-top:12px}
+ .tme .tme-lens-guidance{max-width:38ch}
+}
+@media(prefers-reduced-motion:reduce){.tme[data-scanner-ready=true] .tme-type,.tme .tme-glasses-target:before{transition:none}}
+.tme[data-motion=reduced] .tme-type{transition:none}
+@media(max-width:700px){.tme-scanner-heading{position:sticky;top:0;z-index:4;background:#1d1a24;padding-top:6px}}
+
+/* Share the same neck/shoulder fade in both observer compositions. */
+@media(min-width:701px){.tme[data-cinematic=true]:not([data-lens-active=true]) .tme-character{clip-path:inset(0 1% 12% 0);mask-image:linear-gradient(to bottom,#000 0 69%,transparent 81%)}}
+
+/* Recordings replace the poster only on request; native controls retain seeking/full-screen. */
+.tme-scanner-image>video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#111015;z-index:1}
+.tme-scanner-image.tme-video-active>img,.tme-scanner-image.tme-video-active>svg{visibility:hidden}
+.tme-video-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:6px 18px;margin-top:12px}
+.tme-video-toolbar button,.tme-video-toolbar a{min-height:44px;display:inline-flex;align-items:center;font:13px/1.4 var(--font-ui);color:#eee0f8;background:transparent;border:0;border-bottom:1px solid #a68ab9;padding:7px 0;cursor:pointer}
+.tme-video-toolbar>span,.tme .tme-video-label{font:12px/1.5 var(--font-ui);color:#c4b6cf}
+.tme .tme-video-label{margin:9px 0 0}
+.tme-video-description{margin-top:7px;font:12px/1.6 var(--font-ui);color:#c4b6cf}.tme-video-description summary{cursor:pointer;min-height:32px;display:list-item;padding:5px 0;width:fit-content}.tme-video-description p{margin:6px 0 0;max-width:65ch}
+.tme .tme-video-status{font:13px/1.5 var(--font-ui);color:#e7ccef;margin-top:8px}.tme-video-status:empty{display:none}
+.tme-video-description summary:focus-visible{outline:2px solid #dfc5f3;outline-offset:3px}
+@media(max-width:700px){.tme-video-toolbar{gap:5px 14px}.tme-video-toolbar button,.tme-video-toolbar a{font-size:13px}}
+
+/* Match D2L’s existing stage instead of dark letterboxing; contain preserves every interface edge. */
+[data-hero-preview=d2l-world] .tme-scanner-image>video{background:#d9e1d6}
+
+/* Playback evidence, not a second navigation control. Native progress supplies semantics. */
+.tme-video-progress{display:block;width:100%;height:2px;margin:10px 0 0;border:0;appearance:none;background:#493d52;color:#c8b2e4}
+.tme-video-progress::-webkit-progress-bar{background:#493d52}
+.tme-video-progress::-webkit-progress-value{background:#c8b2e4}
+.tme-video-progress::-moz-progress-bar{background:#c8b2e4}
+[data-hero-preview=chapter-ring] .tme-scanner-image>video{background:#050506}
+
+[data-hero-preview=chapter-community] .tme-scanner-image>video{background:#241f2e}
+
+[data-hero-preview=chapter-align] .tme-scanner-image>video{background:#f6f5ee}

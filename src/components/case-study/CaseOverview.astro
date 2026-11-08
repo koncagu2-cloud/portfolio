@@ -1,0 +1,9 @@
+---
+import ProjectMetadata from './ProjectMetadata.astro';
+interface Props { items: { label: string; value: string }[] }
+const { items } = Astro.props;
+---
+<section class="case-overview" aria-labelledby="overview-heading">
+  <h2 id="overview-heading" class="micro">Project at a glance</h2>
+  <ProjectMetadata items={items} />
+</section>

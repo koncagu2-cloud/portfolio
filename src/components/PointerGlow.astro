@@ -1,0 +1,44 @@
+<pointer-glow aria-hidden="true"></pointer-glow>
+<script>
+  class PointerGlow extends HTMLElement {
+    private controller?: AbortController;
+    private frame = 0;
+    connectedCallback() {
+      this.controller?.abort();
+      this.controller = new AbortController();
+      const motion = matchMedia('(prefers-reduced-motion: reduce)');
+      const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
+      const { signal } = this.controller;
+      const hide = () => { cancelAnimationFrame(this.frame); this.frame = 0; this.removeAttribute('data-active'); };
+      let x = 0, y = 0;
+      document.addEventListener('pointermove', event => {
+        if (motion.matches || !finePointer.matches || event.pointerType !== 'mouse') { hide(); return; }
+        x = event.clientX; y = event.clientY;
+        if (!this.frame) this.frame = requestAnimationFrame(() => {
+          this.frame = 0;
+          if (motion.matches || !finePointer.matches) return;
+          this.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+          this.setAttribute('data-active', '');
+        });
+      }, { passive: true, signal });
+      document.addEventListener('pointerout', event => { if (!event.relatedTarget) hide(); }, { signal });
+      document.addEventListener('keydown', hide, { signal });
+      document.addEventListener('visibilitychange', hide, { signal });
+      window.addEventListener('blur', hide, { signal });
+      const preferenceChanged = () => { if (motion.matches || !finePointer.matches) hide(); };
+      motion.addEventListener('change', preferenceChanged, { signal });
+      finePointer.addEventListener('change', preferenceChanged, { signal });
+    }
+    disconnectedCallback() {
+      this.controller?.abort(); cancelAnimationFrame(this.frame);
+    }
+  }
+  if (!customElements.get('pointer-glow')) customElements.define('pointer-glow', PointerGlow);
+</script>
+<style>
+  pointer-glow { position: fixed; top: 0; left: 0; width: 0; height: 0; z-index: -1; pointer-events: none; display: none; }
+  pointer-glow::before { content: ''; display: block; width: 240px; height: 240px; transform: translate(-50%,-50%); background: radial-gradient(circle,rgba(125,96,182,.10),transparent 70%); }
+  :global(:root[data-theme='dark']) pointer-glow::before { background: radial-gradient(circle,rgba(151,127,211,.14),transparent 70%); }
+  @media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) { pointer-glow[data-active] { display: block; } }
+  @media(forced-colors:active) { pointer-glow { display: none !important; } }
+</style>

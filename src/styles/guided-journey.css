@@ -1,0 +1,56 @@
+.student-journey { display: block; margin-top: 2rem; }
+.journey-label { color: var(--muted); margin-bottom: 1rem; }
+.journey-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; padding: 0; margin: 0; gap: .75rem; }
+.journey-steps li { min-width: 0; }
+.journey-steps button, .journey-mode { background: var(--paper); color: var(--ink); border: 1px solid var(--rule); cursor: pointer; min-height: 44px; padding: .75rem 1rem; text-align: left; font-size: .9rem; }
+.journey-steps button { display: flex; align-items: center; gap: .75rem; width: 100%; height: 100%; }
+.journey-steps button > span { font: .75rem/1.5 'Courier New', monospace; }
+.journey-steps button[aria-current='step'] { border-color: var(--ink); box-shadow: inset 0 -3px 0 var(--ink); font-weight: 600; }
+.journey-steps button:hover, .journey-mode:hover { border-color: var(--ink); }
+.journey-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem; margin-block: 1rem 1.5rem; }
+.journey-toolbar p { color: var(--muted); font-size: .85rem; }
+.journey-static-nav ol { display: flex; flex-wrap: wrap; gap: .75rem 2rem; padding-left: 1.25rem; }
+.journey-panels { border-top: 1px solid var(--rule); }
+.journey-panel { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(0, .9fr); gap: clamp(1.5rem, 3vw, 3rem); align-items: start; padding-top: 1.5rem; scroll-margin-top: 2rem; }
+.journey-panel + .journey-panel { margin-top: 2rem; border-top: 1px solid var(--rule); }
+.student-journey[data-mode='guided'] .journey-panel { margin-top: 0; border-top: 0; }
+.journey-copy { grid-column: 2; grid-row: 1; min-width: 0; }
+.journey-copy > .micro { color: var(--muted); margin-bottom: .75rem; }
+.journey-copy h3 { font-size: clamp(1.4rem, 2vw, 1.9rem); letter-spacing: -.035em; margin-bottom: 1rem; }
+.journey-copy > p:not(.micro) { font-size: .95rem; margin-top: 1rem; }
+.journey-context { color: var(--muted); }
+.journey-finding { display: inline-block; font-size: .85rem; padding-block: .75rem; margin-top: .5rem; }
+.journey-figure { grid-column: 1; grid-row: 1; min-width: 0; }
+.journey-image { position: relative; background: white; }
+.journey-image img { display: block; width: 100%; height: auto; }
+.journey-markers { position: absolute; inset: 0; pointer-events: none; }
+.journey-markers > span { position: absolute; left: var(--marker-x); top: var(--marker-y); transform: translate(-50%, -50%); display: grid; place-items: center; width: 2rem; height: 2rem; border: 2px solid #202020; background: #fff; color: #202020; border-radius: 50%; font: bold .85rem Arial, sans-serif; box-shadow: 0 0 0 3px #fff; }
+.journey-annotations { border-top: 1px solid var(--rule); }
+.journey-annotations summary { min-height: 44px; }
+.journey-annotations ol { padding-left: 1.5rem; }
+.journey-annotations li + li { margin-top: .75rem; }
+.journey-source-links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+.journey-figure figcaption a { padding-block: .35rem; }
+
+/* Portrait project screens retain their native scale and a distinct composition. */
+.journey-portrait .journey-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.journey-portrait .journey-panel { grid-template-columns: minmax(0, 393px) minmax(0, 1fr); max-width: 65rem; margin-inline: auto; gap: clamp(2rem, 5vw, 5rem); }
+.journey-portrait .journey-copy { max-width: 32rem; }
+.journey-portrait .journey-figure { width: 100%; max-width: 393px; justify-self: center; }
+@media (max-width: 60rem) {
+  .journey-panel, .journey-portrait .journey-panel { grid-template-columns: 1fr; }
+  .journey-copy, .journey-figure { grid-column: auto; grid-row: auto; }
+  .journey-portrait .journey-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 40rem) {
+  .journey-steps, .journey-portrait .journey-steps { grid-template-columns: 1fr; }
+  .journey-markers { display: none; }
+}
+
+/* Keep image controls distinct from the portfolio's actual walkthrough controls. */
+.journey-instruction { max-width: 65ch; color: var(--muted); font-size: .9375rem; margin-block: -.25rem 1.25rem; }
+.journey-reading-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem 1.25rem; }
+.journey-result-link { display: inline-flex; align-items: center; gap: .75rem; min-height: 44px; font-size: .9rem; text-underline-offset: .25em; }
+@media (forced-colors: active) {
+  .journey-steps button[aria-current='step'] { outline: 2px solid ButtonText; outline-offset: -4px; }
+}

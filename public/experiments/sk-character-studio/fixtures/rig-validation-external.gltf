@@ -1,0 +1,408 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "SK Character Studio technical validation fixture"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "SK_TestRig",
+      "children": [
+        1,
+        6
+      ]
+    },
+    {
+      "name": "Root",
+      "children": [
+        2
+      ]
+    },
+    {
+      "name": "Head",
+      "translation": [
+        0,
+        1,
+        0
+      ],
+      "children": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "name": "Eye_L",
+      "translation": [
+        -0.2,
+        0.8,
+        0.06
+      ]
+    },
+    {
+      "name": "Eye_R",
+      "translation": [
+        0.2,
+        0.8,
+        0.06
+      ]
+    },
+    {
+      "name": "GlassesSocket",
+      "translation": [
+        0,
+        0.8,
+        0.15
+      ]
+    },
+    {
+      "name": "RigStrip",
+      "mesh": 0,
+      "skin": 0
+    }
+  ],
+  "skins": [
+    {
+      "name": "TestSkeleton",
+      "inverseBindMatrices": 6,
+      "joints": [
+        1,
+        2
+      ],
+      "skeleton": 1
+    }
+  ],
+  "meshes": [
+    {
+      "name": "ValidationStrip",
+      "weights": [
+        0,
+        0,
+        0
+      ],
+      "extras": {
+        "targetNames": [
+          "eyeBlinkLeft",
+          "eyeBlinkRight",
+          "expressionTest"
+        ]
+      },
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 3,
+            "JOINTS_0": 4,
+            "WEIGHTS_0": 5
+          },
+          "indices": 2,
+          "material": 0,
+          "targets": [
+            {
+              "POSITION": 7
+            },
+            {
+              "POSITION": 8
+            },
+            {
+              "POSITION": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "TestCloth",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.6,
+          0.46,
+          0.28,
+          1
+        ],
+        "roughnessFactor": 0.62,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    }
+  ],
+  "animations": [
+    {
+      "name": "Idle",
+      "samplers": [
+        {
+          "input": 10,
+          "output": 11,
+          "interpolation": "LINEAR"
+        }
+      ],
+      "channels": [
+        {
+          "sampler": 0,
+          "target": {
+            "node": 2,
+            "path": "rotation"
+          }
+        }
+      ]
+    },
+    {
+      "name": "EyeContact",
+      "samplers": [
+        {
+          "input": 10,
+          "output": 12,
+          "interpolation": "LINEAR"
+        }
+      ],
+      "channels": [
+        {
+          "sampler": 0,
+          "target": {
+            "node": 2,
+            "path": "rotation"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MorphTest",
+      "samplers": [
+        {
+          "input": 10,
+          "output": 13,
+          "interpolation": "LINEAR"
+        }
+      ],
+      "channels": [
+        {
+          "sampler": 0,
+          "target": {
+            "node": 6,
+            "path": "weights"
+          }
+        }
+      ]
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 848,
+      "uri": "rig-validation.bin"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 72
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 72,
+      "byteLength": 72
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 144,
+      "byteLength": 24
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 168,
+      "byteLength": 48
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 216,
+      "byteLength": 48
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 264,
+      "byteLength": 96
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 360,
+      "byteLength": 128
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 488,
+      "byteLength": 72
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 560,
+      "byteLength": 72
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 632,
+      "byteLength": 72
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 704,
+      "byteLength": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 716,
+      "byteLength": 48
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 764,
+      "byteLength": 48
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 812,
+      "byteLength": 36
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "type": "VEC3",
+      "count": 6,
+      "min": [
+        -0.4,
+        0,
+        0
+      ],
+      "max": [
+        0.4,
+        2,
+        0
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "type": "VEC3",
+      "count": 6
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5123,
+      "type": "SCALAR",
+      "count": 12
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "type": "VEC2",
+      "count": 6
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5123,
+      "type": "VEC4",
+      "count": 6
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "type": "VEC4",
+      "count": 6
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "type": "MAT4",
+      "count": 2
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "type": "VEC3",
+      "count": 6,
+      "min": [
+        -0.12,
+        -0.2,
+        0
+      ],
+      "max": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5126,
+      "type": "VEC3",
+      "count": 6,
+      "min": [
+        0,
+        -0.2,
+        0
+      ],
+      "max": [
+        0.12,
+        0,
+        0
+      ]
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5126,
+      "type": "VEC3",
+      "count": 6,
+      "min": [
+        -0.25,
+        0,
+        0
+      ],
+      "max": [
+        0.25,
+        0,
+        0.1
+      ]
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5126,
+      "type": "SCALAR",
+      "count": 3,
+      "min": [
+        0
+      ],
+      "max": [
+        3
+      ]
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5126,
+      "type": "VEC4",
+      "count": 3
+    },
+    {
+      "bufferView": 12,
+      "componentType": 5126,
+      "type": "VEC4",
+      "count": 3
+    },
+    {
+      "bufferView": 13,
+      "componentType": 5126,
+      "type": "SCALAR",
+      "count": 9
+    }
+  ]
+}

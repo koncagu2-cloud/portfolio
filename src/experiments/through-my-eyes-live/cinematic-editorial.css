@@ -1,0 +1,107 @@
+/* Presentation rules for the isolated experience. No chapter routing or camera timing. */
+.tme[data-tme]{--tme-body:clamp(1.125rem,1.03rem + .18vw,1.25rem);--tme-support:clamp(1rem,.96rem + .08vw,1.125rem);--tme-art-gap:clamp(20px,3vw,48px)}
+.tme[data-tme][data-cinematic=true] .tme-type{top:var(--hero-copy-top,12%)}
+.tme[data-tme] :is(a,button,summary):focus-visible{outline:3px solid #e4cffa;outline-offset:5px}
+.tme[data-tme] .tme-supporting-recording{margin-top:28px;border-top:1px solid #695970;padding-top:6px;min-width:0}
+.tme[data-tme] .tme-supporting-recording>summary{cursor:pointer;min-height:48px;padding:10px 0;font:1rem/1.6 var(--font-ui);color:#e8dcef}
+.tme[data-tme] .tme-supporting-recording>summary>span{color:#c5b6cf;margin-left:12px;white-space:nowrap}
+.tme[data-tme] .tme-supporting-recording[open]>summary{margin-bottom:20px}
+.tme[data-tme] .tme-curated-art{position:relative;margin:0;min-width:0;overflow:visible;transform:none!important;transition:none!important;background:transparent}
+.tme[data-tme] .tme-curated-art img{display:block;width:100%;height:auto;object-fit:contain;max-height:none}
+.tme[data-tme] .tme-curated-art figcaption{font-size:1rem!important;line-height:1.6;text-align:left;margin:16px 0 0;color:#d3c5df;max-width:60ch}
+.tme[data-tme] .tme-curated-art figcaption>span{display:block;margin-top:6px;color:#baadc7}
+.tme[data-tme] .tme-curated-art figcaption a{display:inline-block;text-decoration:underline;min-height:44px;align-content:center;text-underline-offset:5px}
+.tme[data-tme] .tme-art-label{font:1rem/1.6 var(--font-meta);color:#d6c5e5;margin:0 0 12px}
+/* Hardware and interface are separate, inspectable artifacts, never a fake device composite. */
+.tme[data-tme] .tme-art-chapter-ring{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:0 16px;align-items:center}
+.tme[data-tme] .tme-ring-object{background:#000;overflow:hidden}
+.tme[data-tme] .tme-companion-object{min-width:0}
+.tme[data-tme] .tme-companion-object svg{display:block;width:100%;height:auto;max-height:380px}
+.tme[data-tme] .tme-art-chapter-ring>figcaption{grid-column:1/-1}
+.tme[data-tme] .tme-decision-art{background:#d9e1d6;padding:clamp(12px,2vw,28px)}
+.tme[data-tme] .tme-event-art{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:24px;align-items:center;background:#17131d;padding:24px}
+.tme[data-tme] .tme-event-art svg{display:block;width:100%;height:auto;max-height:400px}
+.tme[data-tme] .tme-event-art>div>p:last-child{font:clamp(1.75rem,2.8vw,3rem)/1.12 var(--font-ui);letter-spacing:-.035em;color:#eee4f5;margin:0}
+.tme[data-tme] .tme-event-art em{font-family:Georgia,serif;font-weight:400;color:#c8b2e4}
+.tme[data-tme] .tme-align-art{background:#f6f5ee;padding:12px}
+/* The scanner is a lens-linked editorial surface; the portrait keeps the left field. */
+.tme[data-tme][data-scanner-ready=true] .tme-hero-perspectives{right:4%;width:46%;padding-right:16px;gap:24px;background:linear-gradient(90deg,#201c27f5,#201c27);isolation:isolate}
+.tme[data-tme] .tme-scanner-heading{border:0;padding-bottom:0;align-items:start}
+.tme[data-tme] .tme-scanner-heading h2{font-size:clamp(1.375rem,1.2rem + .4vw,1.75rem);color:#e7dfee}
+.tme[data-tme] .tme-scanner-heading p{font-size:1rem!important;max-width:28ch;line-height:1.6}
+.tme[data-tme] .tme-hero-perspectives ol{gap:8px 18px}
+.tme[data-tme] .tme-hero-perspectives nav button{min-height:68px}
+.tme[data-tme] .tme-hero-perspectives nav small{font-size:1rem;line-height:1.5}
+.tme[data-tme] .tme-scanner-project{gap:8px;margin-bottom:12px}
+.tme[data-tme] .tme-scanner-project h3{font-size:clamp(2.5rem,1.5rem + 2.4vw,4rem);line-height:1.04;letter-spacing:-.055em}
+.tme[data-tme] .tme-scanner-challenge{font:italic clamp(1.75rem,1.2rem + 1.2vw,2.5rem)/1.18 Georgia,serif;color:#d3bfe8;max-width:25ch;margin:0 0 14px;text-wrap:balance}
+.tme[data-tme] .tme-scanner-context{font-size:1rem;line-height:1.6;color:#cfc0da;margin:0 0 12px;max-width:48ch}
+.tme[data-tme] .tme-scanner-actions{margin:16px 0 28px;gap:12px 28px}
+.tme[data-tme] .tme-scanner-actions a{font-size:clamp(1.0625rem,1rem + .12vw,1.1875rem)!important;min-height:48px}
+.tme[data-tme] .tme-scanner-actions a:first-child{color:#fff1ff;border-bottom:2px solid #dbc2ef;font-weight:500}
+.tme[data-tme] .tme-scanner-actions a+ a{color:#cbbbd8;border-bottom-color:#786586}
+.tme[data-tme] .tme-scanner-contribution{margin-top:24px;max-width:52ch;font-size:var(--tme-body)!important;line-height:1.65}
+.tme[data-tme] .tme-scanner-journey{margin-top:12px}
+.tme[data-tme] .tme-scanner-journey a{color:#d1bedf}
+@media(min-width:701px){
+ .tme[data-tme][data-scanner-ready=true] .tme-hero-perspectives{top:calc(var(--scene-top-nav) + 12px);max-height:calc(var(--stage-height) - var(--scene-top-nav) - 2rem)}
+}
+/* Reference chapter: one question, a hardware/interface relationship, direct access. */
+.tme[data-tme][data-cinematic=true] #chapter-ring .tme-ring-opening{max-width:112rem;margin-inline:auto;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);column-gap:clamp(32px,5vw,112px);row-gap:28px;min-height:0;align-items:center}
+.tme[data-tme][data-cinematic=true] #chapter-ring .tme-ring-opening h2{font-size:clamp(3.5rem,4.4vw,6rem);line-height:1.04;margin:20px 0 28px;letter-spacing:-.055em}
+.tme[data-tme] #chapter-ring .tme-ring-opening>div>p:not(.tme-eyebrow):not(.tme-role-summary):not(.tme-chapter-boundary){font-size:clamp(1.25rem,1.1rem + .3vw,1.625rem)!important;line-height:1.6;max-width:38ch}
+.tme[data-tme] #chapter-ring .tme-role-summary{font-size:var(--tme-body)!important;line-height:1.65;color:#d7c9e2}
+.tme[data-tme] #chapter-ring .tme-opening-actions{gap:12px 28px;margin-top:24px}
+.tme[data-tme] #chapter-ring .tme-opening-actions :is(a,button){font-size:1.125rem!important;min-height:48px}
+.tme[data-tme] #chapter-ring .tme-ring-opening>.tme-curated-art{padding:0;background:transparent}
+.tme[data-tme] #chapter-ring .tme-ring-opening>.tme-curated-art img{height:auto;max-height:none}
+.tme[data-tme] #chapter-ring .tme-opening-detail{max-width:65ch;min-height:0}
+.tme[data-tme] .tme-ring-walkthrough{max-width:75rem;margin:32px auto 0}
+.tme[data-tme] .tme-ring-walkthrough .tme-ring-recording{max-width:64rem;margin:0 auto;padding:0}
+.tme[data-tme] .tme-ring-walkthrough .tme-ring-recording img{height:auto;max-height:none}
+/* Preserve the neck, but dissolve the shoulder boundary over a broader interval. */
+.tme[data-tme][data-ready=true]:not([data-lens-active=true]) .tme-character{mask-image:linear-gradient(to bottom,#000 0,#000 calc(var(--portrait-fade-start,69%) - 35px),#000b var(--portrait-fade-start,69%),#0004 calc(var(--portrait-fade-end,86%) - 15px),transparent var(--portrait-fade-end,86%))}
+@media(min-width:701px) and (max-height:850px){
+ .tme[data-tme][data-cinematic=true] #chapter-ring .tme-ring-opening{align-items:start}
+ .tme[data-tme][data-cinematic=true] #chapter-ring .tme-ring-opening h2{font-size:clamp(3rem,4vw,3.75rem);margin:12px 0 22px}
+}
+@media(max-width:1000px){
+ .tme[data-tme][data-cinematic=true] #chapter-ring .tme-ring-opening{grid-template-columns:minmax(0,1fr);gap:28px}
+ .tme[data-tme] #chapter-ring .tme-ring-opening>.tme-curated-art{max-width:42rem;justify-self:center}
+ .tme[data-tme] .tme-hero-perspectives ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px){
+ .tme[data-tme][data-scanner-ready=true] .tme-hero-perspectives{right:0;width:auto;padding:22px 6% 32px;background:#201c27;gap:20px}
+ .tme[data-tme] .tme-scanner-heading{background:#201c27}
+ .tme[data-tme] .tme-scanner-heading p{max-width:20ch}
+ .tme[data-tme] .tme-scanner-project h3{font-size:clamp(2.25rem,9vw,3rem)}
+ .tme[data-tme] .tme-scanner-challenge{font-size:clamp(1.625rem,6vw,2rem)}
+ .tme[data-tme] .tme-scanner-actions{gap:10px 22px;margin-bottom:22px}
+ .tme[data-tme] .tme-scanner-actions a{font-size:1rem!important}
+ .tme[data-tme] .tme-art-chapter-ring{gap:0 12px}
+ .tme[data-tme] .tme-companion-object .tme-art-label{font-size:1rem!important}
+ .tme[data-tme] .tme-event-art{padding:16px;gap:16px}
+ .tme[data-tme][data-cinematic=true] #chapter-ring .tme-ring-opening h2{font-size:clamp(2.75rem,10vw,3.5rem)}
+}
+
+.tme[data-tme] .tme-curated-art>.tme-scan-outgoing{position:absolute;inset:0;z-index:2;width:100%;height:100%;pointer-events:none;background:#201c27}
+.tme[data-tme] .tme-ring-opening>.tme-ring-walkthrough{grid-column:1/-1;width:100%;margin-top:0}
+@media(min-width:1001px) and (max-height:850px){
+ .tme[data-tme][data-cinematic=true] #chapter-ring .tme-ring-opening h2{font-size:3rem;margin:10px 0 18px}
+ .tme[data-tme] #chapter-ring .tme-ring-opening>div>p{margin-block:12px}
+ .tme[data-tme] #chapter-ring .tme-opening-actions{margin-top:16px}
+}
+.tme[data-tme] .tme-scanner-heading p{max-width:none}
+.tme[data-tme] .tme-ring-object{mix-blend-mode:lighten}
+@media(min-width:701px){.tme[data-tme][data-scanner-ready=true] .tme-hero-perspectives{gap:18px}}
+@media(min-width:1001px) and (max-height:850px){
+ .tme[data-tme] #chapter-ring .tme-ring-opening>div>p{margin-block:8px}
+ .tme[data-tme] #chapter-ring .tme-opening-actions{gap:8px 24px}
+ .tme[data-tme] #chapter-ring .tme-opening-actions :is(a,button){min-height:44px}
+}
+/* Ring chapter: restore the original recording as the primary visual while
+   retaining the refined editorial type and layout. Scanner remains unchanged. */
+.tme[data-tme][data-cinematic=true] #chapter-ring .tme-ring-opening>.tme-ring-recording{padding:0;background:transparent;transform:none;align-self:center}
+.tme[data-tme][data-cinematic=true] #chapter-ring .tme-ring-recording .tme-chapter-video-image>img{height:100%;max-height:none;object-fit:contain}
+.tme[data-tme] #chapter-ring .tme-ring-recording figcaption{text-align:left;margin-left:0;max-width:60ch}
+.tme[data-tme] #chapter-ring .tme-ring-recording .tme-video-toolbar{gap:12px 20px}

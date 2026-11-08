@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+import { site } from '../data/site';
+import { indexingEnabled, publicPages } from '../data/production';
+interface Props { title?: string; description?: string; noindex?: boolean }
+const { title = `${site.name} — ${site.role}${indexingEnabled ? '' : ' / review draft'}`, description = 'UX and product design work by Suleyman Koncagul, combining collaborative university case studies with independent product and web experience exploration. Review draft.', noindex = false } = Astro.props;
+const path = Astro.url.pathname;
+const preview = publicPages.find(page => page.path === path) ?? publicPages[0];
+const canonical = new URL(path, Astro.site);
+const socialImage = new URL(`social/${preview.image}.png`, Astro.site);
+const robots = indexingEnabled && !noindex ? 'index, follow' : 'noindex, nofollow';
+const metaDescription = indexingEnabled ? description.replace(/[ ;]*review (draft|only)\.?$/i, '') : description;
+---
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={metaDescription} />
+    <meta name="robots" content={robots} />
+    {!noindex && <link rel="canonical" href={canonical} />}
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={`${site.name} — Design portfolio`} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={preview.alt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={preview.alt} />
+    <title>{title}</title>
+    <script is:inline>
+      // Light-first. Only an explicit saved choice enables dark mode.
+      try {
+        if (localStorage.getItem('portfolio-theme') === 'dark') {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      } catch { /* Storage may be unavailable; the light default remains usable. */ }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <slot />
+  </body>
+</html>

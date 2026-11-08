@@ -1,0 +1,14 @@
+---
+import { site } from '../data/site';
+import SectionHeading from './SectionHeading.astro';
+interface Props { number?: string }
+const { number = '04' } = Astro.props;
+---
+<section id="contact" class="section contact-section" aria-labelledby="contact-heading">
+  <SectionHeading number={number} title="Let’s connect." id="contact-heading" />
+  <div class="contact-bottom">
+    <p>{site.email ? 'For UX, Product, Interaction Design, or Information Architecture opportunities, contact me by email or LinkedIn.' : 'Email details are awaiting owner approval for this review. You can explore my work and the portfolio’s review history on GitHub.'}</p>
+    {site.email ? <a class="text-link" href={`mailto:${site.email}`} aria-label={`Email ${site.name} at ${site.email}`}>{site.email} <span aria-hidden="true">↗</span></a> : <a class="text-link" href={site.github}>View GitHub profile <span aria-hidden="true">↗</span></a>}
+    {site.linkedIn && <a class="text-link" href={site.linkedIn}>LinkedIn <span aria-hidden="true">↗</span></a>}
+  </div>
+</section>

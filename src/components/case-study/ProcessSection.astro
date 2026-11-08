@@ -1,0 +1,8 @@
+---
+interface Props { id: string; title: string; kicker: string; paragraphs: string[]; points: string[]; sourceNote: string }
+const { id, title, kicker, paragraphs, points, sourceNote } = Astro.props;
+---
+<section id={id} class:list={['process-section', `chapter-${id}`]} aria-labelledby={`${id}-heading`}>
+  <header class="process-heading"><p class="micro">{kicker}</p><h2 id={`${id}-heading`}>{title}</h2></header>
+  <div class="process-content"><div class="process-copy">{paragraphs.map((paragraph) => <p>{paragraph}</p>)}{points.length > 0 && <ul>{points.map((point) => <li>{point}</li>)}</ul>}</div><slot /><p class="source-note">{sourceNote}</p></div>
+</section>

@@ -1,0 +1,46 @@
+{
+  "assets": {
+    "src/assets/apple-ring/product.webp": {
+      "sha256": "0111d6228e6bc5c798155790afc7a8c6b5ce8682c88a0a54fdc1398a09bb59a5",
+      "source": "Prepared Apple Ring case-study package, assets/product.webp",
+      "representation": "AI-generated product visualization",
+      "limitations": "Independent concept. Hardware, integrations and sample readings are not validated product capabilities."
+    },
+    "src/assets/apple-ring/handoff.webp": {
+      "sha256": "f7d49483a5f014c39a65bafb043a60ab80fbc9663547d023a80346c10e1b1179",
+      "source": "Prepared Apple Ring case-study package, assets/handoff.webp",
+      "representation": "Screenshot of the owner-directed, AI-assisted web prototype",
+      "limitations": "Independent concept. Hardware, integrations and sample readings are not validated product capabilities."
+    },
+    "src/assets/apple-ring/missing.webp": {
+      "sha256": "feba493fa74ddf88295fd53bacf835b1c730b03a0f04cd0424b27b3bc1f68423",
+      "source": "Prepared Apple Ring case-study package, assets/missing.webp",
+      "representation": "Screenshot of the owner-directed, AI-assisted web prototype",
+      "limitations": "Independent concept. Hardware, integrations and sample readings are not validated product capabilities."
+    },
+    "src/assets/apple-ring/disconnected.webp": {
+      "sha256": "130e32d08dd710daf325413756f25c79d40fd7d0c8595ed65cd67a3d520502df",
+      "source": "Prepared Apple Ring case-study package, assets/disconnected.webp",
+      "representation": "Screenshot of the owner-directed, AI-assisted web prototype",
+      "limitations": "Independent concept. Hardware, integrations and sample readings are not validated product capabilities."
+    },
+    "src/assets/apple-ring/charging-before.webp": {
+      "sha256": "f83220686d61b35b9db8c0c41f6500f131379d39115e42359aa796099d981bcc",
+      "source": "Prepared Apple Ring case-study package, assets/charging-before.webp",
+      "representation": "AI-generated product visualization",
+      "limitations": "Independent concept. Hardware, integrations and sample readings are not validated product capabilities."
+    },
+    "src/assets/apple-ring/charging-after.webp": {
+      "sha256": "5bb6097dc3006e6404916020db23e1481ace17b87aa4492ee4a9f4f593014a99",
+      "source": "Prepared Apple Ring case-study package, assets/charging-after.webp",
+      "representation": "AI-generated product visualization",
+      "limitations": "Independent concept. Hardware, integrations and sample readings are not validated product capabilities."
+    },
+    "src/assets/apple-ring/viewer.webp": {
+      "sha256": "fdfd776adc03450c1117fa7f9bd76873815c59f8844b753818d700a7201078b0",
+      "source": "Prepared Apple Ring case-study package, assets/viewer.webp",
+      "representation": "Screenshot of the owner-directed, AI-assisted web prototype",
+      "limitations": "Independent concept. Hardware, integrations and sample readings are not validated product capabilities."
+    }
+  }
+}

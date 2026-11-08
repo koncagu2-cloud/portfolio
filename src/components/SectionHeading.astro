@@ -1,0 +1,9 @@
+---
+interface Props { number: string; title: string; id: string; note?: string }
+const { number, title, id, note } = Astro.props;
+---
+<div class="section-heading">
+  <span class="micro section-number" aria-hidden="true">{number} /</span>
+  <h2 id={id}>{title}</h2>
+  {note && <span class="micro section-note">{note}</span>}
+</div>

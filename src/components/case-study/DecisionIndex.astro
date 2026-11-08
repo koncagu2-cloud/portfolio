@@ -1,0 +1,11 @@
+---
+import '../../styles/case-narrative.css';
+interface Props {
+  items: { title: string; explanation: string; target: string }[];
+}
+const { items } = Astro.props;
+---
+<section class="case-decisions" aria-labelledby="decisions-heading">
+  <header><p class="micro">Quick read / Design rationale</p><h2 id="decisions-heading">Three decisions to explore.</h2></header>
+  <ol>{items.map(item => <li><h3><a href={`#${item.target}`}>{item.title}<span aria-hidden="true"> ↓</span></a></h3><p>{item.explanation}</p></li>)}</ol>
+</section>

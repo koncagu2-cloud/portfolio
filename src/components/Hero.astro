@@ -1,0 +1,14 @@
+---
+import { site } from '../data/site';
+const root = import.meta.env.BASE_URL;
+---
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-identity"><p class="micro">{site.role}</p><h1 id="hero-heading">{site.name}<span aria-hidden="true">.</span></h1></div>
+  <div class="hero-bottom">
+    <p>I use information architecture and accessible interactions to make complex systems easier for people to navigate.</p>
+    <div class="hero-actions">
+      <a class="text-link" href="#work">Selected work <span aria-hidden="true">↘</span></a>
+      <a class="text-link" href={`${root}experiments/through-my-eyes-live/`}>Through My Eyes <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>

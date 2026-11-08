@@ -1,0 +1,3 @@
+Temporary Phase 11 static head study, derived from official Blender Human Base Meshes v1.4.1. Bundle README and official listing state CC0. Not the final Phase 8 character; not an approved likeness; no authored rig, facial morphs or animation clips. Runtime gestures are presentation deformations. No reference photographs are embedded. Original work remains unchanged.
+Source: https://www.blender.org/download/demo-files/
+Original bundle provenance retained in local SK Character Studio/phase-11-base-mesh-test/assets/.
