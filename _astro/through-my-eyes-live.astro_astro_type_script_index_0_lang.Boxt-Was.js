@@ -1,1 +1,0 @@
-import"./hero-perspectives.yTKtY2jU.js";
